@@ -10,6 +10,8 @@ libraryDependencies ++= {
     "com.typesafe.akka" % "akka-actor_2.11" % akkaVersion,
     "com.typesafe.akka" % "akka-stream_2.11" % akkaVersion,
     "org.jsoup" % "jsoup" % "1.10.3",
-    "net.ruippeixotog" %% "scala-scraper" % "2.0.0"
+    "net.ruippeixotog" %% "scala-scraper" % "2.0.0",
+    "com.nrinaudo" %% "kantan.xpath" % "0.2.0",
+    "com.nrinaudo" %% "kantan.xpath-nekohtml" % "0.2.0"
   )
 }

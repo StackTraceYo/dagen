@@ -1,8 +1,8 @@
-package com.stacktrace.yo.scrakka.old
+package com.stacktrace.yo.scrapeline.old
 
 import akka.actor.{Actor, ActorLogging, Cancellable, Props}
-import com.stacktrace.yo.scrakka.old.HttpRequestSupervisor.SendNextRequests
-import com.stacktrace.yo.scrakka.old.ScrapeActor.{BeginScrape, ScrapeContent}
+import com.stacktrace.yo.scrapeline.old.HttpRequestSupervisor.SendNextRequests
+import com.stacktrace.yo.scrapeline.old.ScrapeActor.{BeginScrape, ScrapeContent}
 import net.ruippeixotog.scalascraper.model.Document
 
 import scala.concurrent.duration._

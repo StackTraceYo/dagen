@@ -1,7 +1,7 @@
-package com.stacktrace.yo.scrakka.old
+package com.stacktrace.yo.scrapeline.old
 
 import akka.actor.{Actor, ActorLogging, PoisonPill}
-import com.stacktrace.yo.scrakka.old.ScrapeActor.{BeginScrape, ScrapeContent}
+import com.stacktrace.yo.scrapeline.old.ScrapeActor.{BeginScrape, ScrapeContent}
 import net.ruippeixotog.scalascraper.browser.JsoupBrowser
 import net.ruippeixotog.scalascraper.model.Document
 

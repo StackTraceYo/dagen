@@ -1,10 +1,10 @@
-package com.stacktrace.yo.scrakka.old
+package com.stacktrace.yo.scrapeline.old
 
 import akka.actor.{ActorSystem, Props}
 import akka.pattern.ask
 import akka.util.Timeout
-import com.stacktrace.yo.scrakka.old.ScrapeActor.{BeginScrape, ScrapeContent}
-import com.stacktrace.yo.scrakka.scrape.Domain.MovieNameAndDetailUrl
+import com.stacktrace.yo.scrapeline.old.ScrapeActor.{BeginScrape, ScrapeContent}
+import com.stacktrace.yo.scrapeline.imdb.Domain.MovieNameAndDetailUrl
 
 import scala.concurrent.duration._
 import scala.language.postfixOps

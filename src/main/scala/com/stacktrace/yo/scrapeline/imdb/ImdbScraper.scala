@@ -1,7 +1,8 @@
-package com.stacktrace.yo.scrakka
+package com.stacktrace.yo.scrapeline.imdb
 
 import akka.actor.ActorSystem
 import akka.stream.ActorMaterializer
+import com.stacktrace.yo.scrapeline.imdb.pipelines.{MovieListPipeline, MovieNameToIMDBPipeline}
 
 import scala.concurrent.Await
 import scala.concurrent.duration._
@@ -19,9 +20,10 @@ object ImdbScraper extends App {
   Await.result(movieNameList, 120 seconds)
   println("Finished Movie Name List Flow..")
 
-  val movieNameToImdbDocument = new MovieNameToIMDBDocument().buildAndRun
-  println("Finished Movie Name To Imdb Url Flow..")
+  val movieNameToImdbDocument = new MovieNameToIMDBPipeline()
+    .getOutput
   Await.result(movieNameToImdbDocument, 120 seconds)
+  println("Finished Movie Name To Imdb Url Flow..")
   as.terminate()
 
 

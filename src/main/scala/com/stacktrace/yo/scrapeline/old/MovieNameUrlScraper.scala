@@ -1,8 +1,8 @@
-package com.stacktrace.yo.scrakka.old
+package com.stacktrace.yo.scrapeline.old
 
 import akka.actor.{Actor, ActorLogging}
-import com.stacktrace.yo.scrakka.old.ScrapeActor.ScrapeContent
-import com.stacktrace.yo.scrakka.scrape.Domain.MovieNameAndDetailUrl
+import com.stacktrace.yo.scrapeline.old.ScrapeActor.ScrapeContent
+import com.stacktrace.yo.scrapeline.imdb.Domain.MovieNameAndDetailUrl
 import net.ruippeixotog.scalascraper.dsl.DSL._
 import net.ruippeixotog.scalascraper.model.Document
 import net.ruippeixotog.scalascraper.scraper.ContentExtractors.elementList

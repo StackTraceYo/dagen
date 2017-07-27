@@ -1,4 +1,4 @@
-package com.stacktrace.yo.scrakka.core
+package com.stacktrace.yo.scrapeline.core
 
 import net.ruippeixotog.scalascraper.browser.JsoupBrowser
 
@@ -9,6 +9,5 @@ object ScrapeClient {
   def scrape(url: String): jsoup.DocumentType = {
     jsoup.get(url)
   }
-
 
 }
