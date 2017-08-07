@@ -1,6 +1,6 @@
 # scrapeline
 
-An akka stream based application and in the future a library to help build web scraping pipelines
+An akka stream based application and in the future a library to help build web scraping/api pipelines
 
 This is also a nice simple use case of Akka-Streams
 
