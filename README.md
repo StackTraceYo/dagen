@@ -10,7 +10,6 @@ inspired by [scrapy](https://github.com/scrapy/scrapy) and after reading [Predic
 
 ##imdb scraper
 
-As mentionaed before I am building this to scrape imdb -> here is the general application flow for imdb
 1. ImdbScraper
     * This is the intro point into the application it calls the flows in order
 2. The first pipeline is MovieListPipeline
