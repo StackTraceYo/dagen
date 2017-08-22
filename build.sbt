@@ -5,7 +5,7 @@ version := "1.0"
 scalaVersion := "2.11.8"
 val akkaVersion = "2.5.3"
 
-resolvers += "Local Maven Repository" at "file://" + Path.userHome.absolutePath + "/.m2/repository"
+resolvers += "Local Maven" at Path.userHome.asFile.toURI.toURL + ".m2/repository"
 
 libraryDependencies ++= {
   Seq(

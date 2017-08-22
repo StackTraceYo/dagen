@@ -20,7 +20,7 @@ object IGDBScraper extends App {
 
 
   val videoGameList = new CreateVideoGameIdListPipeline().buildAndRun
-//  Await.result(videoGameList, 120 seconds)
+  Await.result(videoGameList, 10 seconds)
   println("Finished Video Game Name List Flow..")
 
   as.terminate()
