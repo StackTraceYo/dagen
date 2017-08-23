@@ -1,42 +1,31 @@
 package com.stacktrace.yo.scrapeline.imdb.pipelines
 
 import java.net.URLEncoder
-import java.nio.file.Paths
 
-import akka.stream.scaladsl.{FileIO, Flow, Framing, Source}
-import akka.stream.{ActorMaterializer, IOResult}
-import akka.util.ByteString
-import akka.{Done, NotUsed}
-import com.stacktrace.yo.scrapeline.imdb.Domain.MovieNameAndDetailUrl
+import com.stacktrace.yo.scrapeline.core.ScrapeClient
+import com.stacktrace.yo.scrapeline.core.ScrapeClient.jsoup
+import com.stacktrace.yo.scrapeline.imdb.Domain.{MovieNameAndDetailUrl, MovieNameAndImdbUrl}
+import net.ruippeixotog.scalascraper.dsl.DSL._
+import net.ruippeixotog.scalascraper.scraper.ContentExtractors.element
 
-import scala.concurrent.{ExecutionContext, Future}
+import scala.io.Source
 
-class MovieNameToIMDBPipeline(implicit val m: ActorMaterializer, implicit val ec: ExecutionContext) {
+class MovieNameToIMDBPipeline {
 
-  private def getPipelineSource: Source[String, Future[IOResult]] = {
-    FileIO.fromPath(Paths.get("movie.txt"))
-      .via(Framing.delimiter(ByteString("\n"), 256)
-        .map(_.utf8String)
-      )
+  def run(): Iterator[(String, jsoup.DocumentType)] = {
+    Source.fromFile("movie.txt")
+      .getLines()
+      .map(line => {
+        val encodedString: String = URLEncoder.encode(line, "UTF-8")
+        MovieNameAndDetailUrl(line, "http://www.imdb.com/find?ref_=nv_sr_fn&q=" + encodedString + "&s=tt")
+      })
+      .map(nameDetail => {
+        val document = ScrapeClient.scrape(nameDetail.url)
+        val link = document >> element("#main div div.findSection table tbody tr:nth-child(1) td.result_text  a")
+        MovieNameAndImdbUrl(nameDetail.name, "http://www.imdb.com" + link.attr("href"))
+      })
+      .map(nameImdb => {
+        (nameImdb.name, ScrapeClient.scrape(nameImdb.url))
+      })
   }
-
-  private def getDetailUrlFlow: Flow[String, MovieNameAndDetailUrl, NotUsed] = {
-    Flow[String]
-      .mapAsyncUnordered(100)(mapPipeToImdbSearch)
-  }
-
-
-  private def mapPipeToImdbSearch(in: String): Future[MovieNameAndDetailUrl] = Future {
-    val encodedString: String = URLEncoder.encode(in, "UTF-8")
-    MovieNameAndDetailUrl(in, "http://www.imdb.com/find?ref_=nv_sr_fn&q=" + encodedString + "&s=tt")
-  }
-
-
-  def getOutput: Future[Done] = {
-    getPipelineSource
-      .via(getDetailUrlFlow)
-      .via(new IMDBSearchSubPipe().getSubFlow)
-      .runForeach(x => println(x.name + ":" + x.url))
-  }
-
 }
