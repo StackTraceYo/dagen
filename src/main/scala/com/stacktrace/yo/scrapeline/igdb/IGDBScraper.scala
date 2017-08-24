@@ -1,8 +1,9 @@
 package com.stacktrace.yo.scrapeline.igdb
 
-import akka.actor.ActorSystem
+import akka.actor.{ActorSystem, Props}
 import akka.stream.ActorMaterializer
-import com.stacktrace.yo.scrapeline.igdb.pipeline.{CreateVideoGameIdListPipeline, GetGameDetailPipeline}
+import com.stacktrace.yo.scrapeline.igdb.pipeline.IGDBPipelineController
+import com.stacktrace.yo.scrapeline.igdb.pipeline.IGDBPipelineController.Start
 
 import scala.language.postfixOps
 
@@ -16,6 +17,6 @@ object IGDBScraper extends App {
   implicit val mat = ActorMaterializer()
 
 
-  val videoGameList = new CreateVideoGameIdListPipeline().run()
-  val gameDetail = new GetGameDetailPipeline().run()
+  val controller = as.actorOf(Props(new IGDBPipelineController()))
+  controller ! Start()
 }

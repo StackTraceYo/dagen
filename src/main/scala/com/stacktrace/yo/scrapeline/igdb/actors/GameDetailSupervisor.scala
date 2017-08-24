@@ -55,7 +55,6 @@ class GameDetailSupervisor(val idSet: Vector[String]) extends Actor with ActorLo
       if (numWrote < idSize) {
         val sendOut = Math.min(toWrite.size, 10 - writing)
         for (i <- 1 to sendOut) {
-
           val game = toWrite.dequeue()
           val writer = context.actorOf(Props(new WriteGameDetailActor()))
           writer ! WriteGame(game)
