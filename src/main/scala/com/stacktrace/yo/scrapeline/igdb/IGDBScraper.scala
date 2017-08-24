@@ -10,6 +10,6 @@ import scala.language.postfixOps
 object IGDBScraper extends App {
 
 
-  val videoGameList = new CreateVideoGameIdListPipeline().buildAndRun
+  val videoGameList = new CreateVideoGameIdListPipeline().run()
   println("Finished Video Game Name List Flow..")
 }
