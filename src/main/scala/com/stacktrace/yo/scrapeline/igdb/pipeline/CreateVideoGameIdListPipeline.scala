@@ -6,6 +6,8 @@ import com.stacktrace.yo.scrapeline.core.IGDBAPIClient
 import org.stacktrace.yo.igdb.client.IGDBClient
 import org.stacktrace.yo.igdb.model.{Genre, Theme}
 
+import scala.io.Source
+
 /**
   * Created by Stacktraceyo on 8/18/17.
   */
@@ -40,6 +42,51 @@ class CreateVideoGameIdListPipeline {
       })
     bw2.close()
 
+    val gameMap = collection.mutable.HashMap[String, String]()
+
+    Source.fromFile("gamegenre.txt")
+      .getLines()
+      .foreach(line => {
+        val tokens = line.split(",")
+        val id = tokens(0)
+        val genre = tokens(1)
+        gameMap.get(id) match {
+          case None =>
+            gameMap.put(id, genre)
+          case Some(v) =>
+            gameMap.put(id, v + "/" + genre)
+        }
+      })
+
+    Source.fromFile("gametheme.txt")
+      .getLines()
+      .foreach(line => {
+        val tokens = line.split(",")
+        val id = tokens(0)
+        val genre = tokens(1)
+        gameMap.get(id) match {
+          case None =>
+            gameMap.put(id, genre)
+          case Some(v) =>
+            gameMap.put(id, v + "/" + genre)
+        }
+      })
+
+    val finalFile = new File("gamecombined.txt")
+    val finalBw = new BufferedWriter(new FileWriter(finalFile))
+    gameMap
+      .toList
+      .sortWith(sortById)
+      .foreach(game => {
+        finalBw.write(game._1 + "," + game._2 + "\n")
+      })
+    finalBw.close()
+    println("Finished Video Game Name List Flow..")
+    println("Found " + gameMap.size + " games")
+  }
+
+  def sortById(s1: (String, String), s2: (String, String)): Boolean = {
+    s1._1.toLong < s2._1.toLong
   }
 
 
