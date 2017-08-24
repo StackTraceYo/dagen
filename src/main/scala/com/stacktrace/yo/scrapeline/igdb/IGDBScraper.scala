@@ -17,5 +17,5 @@ object IGDBScraper extends App {
 
 
   val videoGameList = new CreateVideoGameIdListPipeline().run()
-  val x = new GetGameDetailPipeline().run()
+  val gameDetail = new GetGameDetailPipeline().run()
 }
