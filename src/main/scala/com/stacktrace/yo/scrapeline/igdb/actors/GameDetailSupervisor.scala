@@ -2,10 +2,12 @@ package com.stacktrace.yo.scrapeline.igdb.actors
 
 import java.util
 
-import akka.actor.{Actor, ActorLogging, Cancellable, Props}
+import akka.actor.{ActorRef, Cancellable, PoisonPill, Props}
+import com.stacktrace.yo.scrapeline.core.pipeline.PipelineActor
 import com.stacktrace.yo.scrapeline.igdb.actors.GameDetailActor.{GetIds, WriteContent}
-import com.stacktrace.yo.scrapeline.igdb.actors.GameDetailSupervisor.WriteNextObjects
+import com.stacktrace.yo.scrapeline.igdb.actors.GameDetailSupervisor.{StartSupervisor, WriteNextObjects}
 import com.stacktrace.yo.scrapeline.igdb.actors.WriteGameDetailActor.{FinishedWrite, WriteGame}
+import com.stacktrace.yo.scrapeline.igdb.pipeline.IGDBPipelineController.{Finished, Report}
 import com.stacktrace.yo.scrapeline.old.HttpRequestSupervisor.SendNextRequests
 import org.stacktrace.yo.igdb.model.Game
 
@@ -14,24 +16,33 @@ import scala.collection.mutable
 import scala.concurrent.duration._
 import scala.language.postfixOps
 
-class GameDetailSupervisor(val idSet: Vector[String]) extends Actor with ActorLogging {
+class GameDetailSupervisor(val idSet: Vector[String]) extends PipelineActor {
 
   import context.dispatcher
 
-  val idSize: Int = idSet.size
+  var pipeline: ActorRef = _
+
+
+  lazy val idSize: Int = idSet.size
 
   var numVisited = 0
   var inProcess = 0
-  val toProcess = scala.collection.mutable.Queue(idSet: _*)
+  lazy val toProcess = scala.collection.mutable.Queue(idSet: _*)
 
   var writing = 0
   var numWrote = 0
-  val toWrite: mutable.Queue[Game] = scala.collection.mutable.Queue[Game]()
+  lazy val toWrite: mutable.Queue[Game] = scala.collection.mutable.Queue[Game]()
 
-  val tick: Cancellable = context.system.scheduler.schedule(0 millis, 1000 millis, self, SendNextRequests())
-  val writeTick: Cancellable = context.system.scheduler.schedule(10000 millis, 1000 millis, self, WriteNextObjects())
+  lazy val tick: Cancellable = context.system.scheduler.schedule(0 millis, 1000 millis, self, SendNextRequests())
+  lazy val writeTick: Cancellable = context.system.scheduler.schedule(10000 millis, 1000 millis, self, WriteNextObjects())
+  lazy val reportTick: Cancellable = context.system.scheduler.schedule(10000 millis, 10000 millis, self, Report())
 
   override def receive: Receive = {
+    case StartSupervisor(pipeline: ActorRef) =>
+      this.pipeline = pipeline
+      tick
+      writeTick
+      reportTick
     case SendNextRequests() =>
       if (numVisited < idSet.size) {
         val sendOut = Math.min(toProcess.size, 10 - inProcess)
@@ -48,7 +59,6 @@ class GameDetailSupervisor(val idSet: Vector[String]) extends Actor with ActorLo
     case msg@WriteContent(doc: util.List[Game]) => {
       inProcess -= 1
       numVisited += 10
-      log.info("Recieved Response {} left in queue, {} in process", toProcess.size, inProcess)
       doc.toList.foreach(toWrite.enqueue(_))
     }
     case WriteNextObjects() => {
@@ -63,9 +73,18 @@ class GameDetailSupervisor(val idSet: Vector[String]) extends Actor with ActorLo
       }
     }
     case FinishedWrite(name: String) => {
-      log.info("Writing {} Done : {} , {} in process", name, idSize - numWrote, writing)
       numWrote += 1
       writing -= 1
+    }
+    case Report() => {
+      log.info("Done Writing: {} , {} in process", idSize - numWrote, writing)
+      log.info("{} Response s left in queue, {} in process", toProcess.size, inProcess)
+      if (numWrote >= idSize) {
+        log.info("Completed Game Detail Writing.. Closing")
+        pipeline ! Finished()
+        self ! PoisonPill
+      }
+
     }
   }
 }
@@ -75,5 +94,7 @@ object GameDetailSupervisor {
   case class SendNextRequests()
 
   case class WriteNextObjects()
+
+  case class StartSupervisor(pipelin: ActorRef)
 
 }

@@ -2,8 +2,9 @@ package com.stacktrace.yo.scrapeline.igdb.pipeline
 
 import java.io.{BufferedWriter, File, FileWriter}
 
-import akka.actor.Actor
+import akka.actor.PoisonPill
 import com.stacktrace.yo.scrapeline.core.IGDBAPIClient
+import com.stacktrace.yo.scrapeline.core.pipeline.PipelineActor
 import com.stacktrace.yo.scrapeline.igdb.pipeline.IGDBPipelineController.{PhaseFinished, StartPhase}
 import org.stacktrace.yo.igdb.client.IGDBClient
 import org.stacktrace.yo.igdb.model.{Genre, Theme}
@@ -13,7 +14,7 @@ import scala.io.Source
 /**
   * Created by Stacktraceyo on 8/18/17.
   */
-class CreateVideoGameIdListPipeline extends Actor {
+class CreateVideoGameIdListPipeline extends PipelineActor {
 
   import scala.collection.JavaConversions._
 
@@ -23,32 +24,37 @@ class CreateVideoGameIdListPipeline extends Actor {
 
   override def receive: Receive = {
     case StartPhase() =>
-      val themeCountids = client.themes().count().getCount.toInt
-      val genreCountids = client.genres().count().getCount.toInt
-      val ids = (1 to Math.max(themeCountids, genreCountids)).toVector.mkString(",")
 
+      if (new File("gamegenretheme.txt").exists()) {
+        log.info("GameGenreTheme Id File Exists.. Skipping Collection")
+      }
+      else {
+        val themeCountids = client.themes().count().getCount.toInt
+        val genreCountids = client.genres().count().getCount.toInt
+        val ids = (1 to Math.max(themeCountids, genreCountids)).toVector.mkString(",")
 
-      val file = new File("gametheme.txt")
-      val bw = new BufferedWriter(new FileWriter(file))
-      getThemesCall(ids)
-        .flatMap(getGameListFromTheme)
-        .foreach(gametheme => {
-          bw.write(gametheme._1 + "," + gametheme._2 + "\n")
-        })
-      bw.close()
+        val file = new File("gamegenretheme.txt")
+        val bw = new BufferedWriter(new FileWriter(file))
+        getThemesCall(ids)
+          .flatMap(getGameListFromTheme)
+          .foreach(gametheme => {
+            bw.write(gametheme._1 + "," + gametheme._2 + "\n")
+          })
+        getGenresCall(ids)
+          .flatMap(getGameListFromGenre)
+          .foreach(gamegenre => {
+            bw.write(gamegenre._1 + "," + gamegenre._2 + "\n")
+          })
 
-      val file2 = new File("gamegenre.txt")
-      val bw2 = new BufferedWriter(new FileWriter(file2))
-      getGenresCall(ids)
-        .flatMap(getGameListFromGenre)
-        .foreach(gamegenre => {
-          bw2.write(gamegenre._1 + "," + gamegenre._2 + "\n")
-        })
-      bw2.close()
+        bw.flush()
+        bw.close()
+        log.info("Completed GameGenreTheme Id Collection")
+      }
+
 
       val gameMap = collection.mutable.HashMap[String, String]()
 
-      Source.fromFile("gamegenre.txt")
+      Source.fromFile("gamegenretheme.txt")
         .getLines()
         .foreach(line => {
           val tokens = line.split(",")
@@ -61,21 +67,7 @@ class CreateVideoGameIdListPipeline extends Actor {
               gameMap.put(id, v + "/" + genre)
           }
         })
-
-      Source.fromFile("gametheme.txt")
-        .getLines()
-        .foreach(line => {
-          val tokens = line.split(",")
-          val id = tokens(0)
-          val genre = tokens(1)
-          gameMap.get(id) match {
-            case None =>
-              gameMap.put(id, genre)
-            case Some(v) =>
-              gameMap.put(id, v + "/" + genre)
-          }
-        })
-
+      log.info("Combining Completed")
       val finalFile = new File("gamecombined.txt")
       val finalBw = new BufferedWriter(new FileWriter(finalFile))
       gameMap
@@ -84,12 +76,13 @@ class CreateVideoGameIdListPipeline extends Actor {
         .foreach(game => {
           finalBw.write(game._1 + "," + game._2 + "\n")
         })
+      finalBw.flush()
       finalBw.close()
-      println("Finished Video Game Name List Flow..")
-      println("Found " + gameMap.size + " games")
-      sender() ! PhaseFinished()
+      log.info("Finished Video Game Name List Flow..")
+      log.info("Found {} game ids", gameMap.size)
+      sender() ! PhaseFinished("CreateVideoGameIdListPipeline")
+      self ! PoisonPill
   }
-
 
   def sortById(s1: (String, String), s2: (String, String)): Boolean = {
     s1._1.toLong < s2._1.toLong

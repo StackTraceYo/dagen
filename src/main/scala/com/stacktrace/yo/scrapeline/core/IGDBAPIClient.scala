@@ -8,7 +8,7 @@ import org.stacktrace.yo.igdb.client.IGDBClient
 object IGDBAPIClient {
 
   private lazy val client = IGDBClient.getBuilder.
-    withKey("ea380a24711ad2e2ae60c63223371f03")
+    withKey("cbc5412c3d3f732df485f9cfe47d03f2")
     .withUrl("https://api-2445582011268.apicast.io")
     .build
 

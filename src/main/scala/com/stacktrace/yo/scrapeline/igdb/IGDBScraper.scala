@@ -5,6 +5,7 @@ import akka.stream.ActorMaterializer
 import com.stacktrace.yo.scrapeline.igdb.pipeline.IGDBPipelineController
 import com.stacktrace.yo.scrapeline.igdb.pipeline.IGDBPipelineController.Start
 
+import scala.concurrent.ExecutionContextExecutor
 import scala.language.postfixOps
 
 /**
@@ -12,11 +13,11 @@ import scala.language.postfixOps
   */
 object IGDBScraper extends App {
 
-  implicit val as = ActorSystem()
-  implicit val ec = as.dispatcher
-  implicit val mat = ActorMaterializer()
+  implicit val as: ActorSystem = ActorSystem()
+  implicit val ec: ExecutionContextExecutor = as.dispatcher
+  implicit val mat: ActorMaterializer = ActorMaterializer()
 
 
   val controller = as.actorOf(Props(new IGDBPipelineController()))
-  controller ! Start()
+  controller ! Start("CreateVideoGameIdListPipeline")
 }
