@@ -3,11 +3,11 @@ package com.stacktrace.yo.scrapeline.igdb.actors
 import java.util
 
 import akka.actor.{ActorRef, Cancellable, PoisonPill, Props}
+import com.stacktrace.yo.scrapeline.core.Protocol.{Finished, Report, StartSupervisor}
 import com.stacktrace.yo.scrapeline.core.pipeline.PipelineActor
 import com.stacktrace.yo.scrapeline.igdb.actors.GameDetailActor.{GetIds, WriteContent}
-import com.stacktrace.yo.scrapeline.igdb.actors.GameDetailSupervisor.{StartSupervisor, WriteNextObjects}
+import com.stacktrace.yo.scrapeline.igdb.actors.GameDetailSupervisor.WriteNextObjects
 import com.stacktrace.yo.scrapeline.igdb.actors.WriteGameDetailActor.{FinishedWrite, WriteGame}
-import com.stacktrace.yo.scrapeline.igdb.pipeline.IGDBPipelineController.{Finished, Report}
 import com.stacktrace.yo.scrapeline.old.HttpRequestSupervisor.SendNextRequests
 import org.stacktrace.yo.igdb.model.Game
 
@@ -94,7 +94,5 @@ object GameDetailSupervisor {
   case class SendNextRequests()
 
   case class WriteNextObjects()
-
-  case class StartSupervisor(pipelin: ActorRef)
 
 }

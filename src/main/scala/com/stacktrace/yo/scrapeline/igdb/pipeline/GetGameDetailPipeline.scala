@@ -4,10 +4,9 @@ import java.io.File
 
 import akka.actor.{ActorRef, Props}
 import com.stacktrace.yo.scrapeline.core.IGDBAPIClient
+import com.stacktrace.yo.scrapeline.core.Protocol.{Finished, PhaseFinished, StartPhase, StartSupervisor}
 import com.stacktrace.yo.scrapeline.core.pipeline.PipelineActor
 import com.stacktrace.yo.scrapeline.igdb.actors.GameDetailSupervisor
-import com.stacktrace.yo.scrapeline.igdb.actors.GameDetailSupervisor.StartSupervisor
-import com.stacktrace.yo.scrapeline.igdb.pipeline.IGDBPipelineController.{Finished, PhaseFinished, StartPhase}
 import org.stacktrace.yo.igdb.client.IGDBClient
 
 import scala.io.Source

@@ -4,8 +4,8 @@ import java.io.{BufferedWriter, File, FileWriter}
 
 import akka.actor.PoisonPill
 import com.stacktrace.yo.scrapeline.core.IGDBAPIClient
+import com.stacktrace.yo.scrapeline.core.Protocol.{PhaseFinished, StartPhase}
 import com.stacktrace.yo.scrapeline.core.pipeline.PipelineActor
-import com.stacktrace.yo.scrapeline.igdb.pipeline.IGDBPipelineController.{PhaseFinished, StartPhase}
 import org.stacktrace.yo.igdb.client.IGDBClient
 import org.stacktrace.yo.igdb.model.{Genre, Theme}
 

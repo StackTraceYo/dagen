@@ -3,7 +3,7 @@ package com.stacktrace.yo.scrapeline.igdb.pipeline
 import java.time.Instant
 
 import akka.actor.{Actor, ActorLogging, ActorRef, Cancellable, Props}
-import com.stacktrace.yo.scrapeline.igdb.pipeline.IGDBPipelineController._
+import com.stacktrace.yo.scrapeline.core.Protocol._
 
 import scala.collection.mutable
 import scala.concurrent.ExecutionContext
@@ -70,21 +70,5 @@ class IGDBPipelineController(implicit executionContext: ExecutionContext) extend
     actor
   }
 
-
-}
-
-object IGDBPipelineController {
-
-  case class Report()
-
-  case class Start(phase: String = "")
-
-  case class Finished()
-
-  case class StartPhase()
-
-  case class NextPhase(previous: String)
-
-  case class PhaseFinished(name: String)
 
 }
