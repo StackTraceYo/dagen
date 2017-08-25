@@ -28,17 +28,17 @@ class GameDetailPipeline extends PipelineActor {
     case StartPhase() =>
       controller = sender
       if (canSkip) {
-        self ! Finished()
+        self ! PipelineFinished()
       }
       else {
         val supervisor = context.actorOf(Props(new GameDetailSupervisor(start())))
         supervisor ! StartDelegate(self)
       }
-    case Finished() =>
+    case PipelineFinished() =>
       controller ! PhaseFinished("GameDetailPipeline")
       self ! PoisonPill
-    case Progress() =>
-      controller ! PhasePartial("GameDetailPipeline")
+    case Working() =>
+      controller ! StartDownstream("GameDetailPipeline")
   }
 
 

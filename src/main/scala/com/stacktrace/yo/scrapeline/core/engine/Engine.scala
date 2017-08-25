@@ -30,7 +30,7 @@ class Engine(implicit executionContext: ExecutionContext) extends Actor with Act
       phasesRunning = phasesRunning.filter(_ != name)
       self ! NextPhase(name)
       self ! Report()
-    case PhasePartial(name: String) =>
+    case StartDownstream(name: String) =>
       self ! NextPhase(name)
       self ! Report()
     case NextPhase(fin: String) =>

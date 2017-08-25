@@ -14,7 +14,7 @@ object Protocol {
   case class Start(phase: String = "")
 
   //pipeline is finished
-  case class Finished()
+  case class PipelineFinished()
 
   //Begin Phase
   case class StartPhase()
@@ -26,12 +26,15 @@ object Protocol {
   case class PhaseFinished(name: String)
 
   //Phase Is partially done and next one can start in parallel
-  case class PhasePartial(name: String)
+  case class StartDownstream(name: String)
+
+  //Downstream phases which started before upstream completion can be made aware their upstream is done
+  case class UpstreamFinished()
 
   //Delegate from pipeline
   case class StartDelegate(pipeline: ActorRef)
 
   //Worker Is Working
-  case class Progress()
+  case class Working()
 
 }
