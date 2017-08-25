@@ -3,63 +3,68 @@ package com.stacktrace.yo.scrapeline.igdb.actors
 import java.util
 
 import akka.actor.{ActorRef, Cancellable, PoisonPill, Props}
-import com.stacktrace.yo.scrapeline.core.Protocol.{Finished, Report, StartSupervisor}
-import com.stacktrace.yo.scrapeline.core.pipeline.PipelineActor
+import com.stacktrace.yo.scrapeline.core.Protocol.{Finished, Report, StartDelegate}
+import com.stacktrace.yo.scrapeline.core.pipeline.Delegator
 import com.stacktrace.yo.scrapeline.igdb.actors.GameDetailActor.{GetIds, WriteContent}
 import com.stacktrace.yo.scrapeline.igdb.actors.GameDetailSupervisor.WriteNextObjects
 import com.stacktrace.yo.scrapeline.igdb.actors.WriteGameDetailActor.{FinishedWrite, WriteGame}
 import com.stacktrace.yo.scrapeline.old.HttpRequestSupervisor.SendNextRequests
 import org.stacktrace.yo.igdb.model.Game
 
-import scala.collection.JavaConversions._
 import scala.collection.mutable
 import scala.concurrent.duration._
 import scala.language.postfixOps
 
-class GameDetailSupervisor(val idSet: Vector[String]) extends PipelineActor {
+class GameDetailSupervisor(val idSet: Vector[String]) extends Delegator {
 
   import context.dispatcher
+
+  import scala.collection.JavaConversions._
 
   var pipeline: ActorRef = _
 
 
   lazy val idSize: Int = idSet.size
 
+  //ids visited
   var numVisited = 0
+  //requests in process
   var inProcess = 0
+  //ids to process
   lazy val toProcess = scala.collection.mutable.Queue(idSet: _*)
 
+  //responses writing
   var writing = 0
+  //ids written
   var numWrote = 0
-  lazy val toWrite: mutable.Queue[Game] = scala.collection.mutable.Queue[Game]()
+  //lists of games to write
+  lazy val toWrite: mutable.Queue[List[Game]] = scala.collection.mutable.Queue[List[Game]]()
+  var idsLeftToWrite: Int = idSet.size
 
-  lazy val tick: Cancellable = context.system.scheduler.schedule(0 millis, 1000 millis, self, SendNextRequests())
-  lazy val writeTick: Cancellable = context.system.scheduler.schedule(10000 millis, 1000 millis, self, WriteNextObjects())
+  lazy val tick: Cancellable = context.system.scheduler.schedule(0 millis, 10000 millis, self, SendNextRequests())
+  lazy val writeTick: Cancellable = context.system.scheduler.schedule(15000 millis, 1000 millis, self, WriteNextObjects())
   lazy val reportTick: Cancellable = context.system.scheduler.schedule(10000 millis, 10000 millis, self, Report())
 
   override def receive: Receive = {
-    case StartSupervisor(pipeline: ActorRef) =>
+    case StartDelegate(pipeline: ActorRef) =>
       this.pipeline = pipeline
       tick
       writeTick
       reportTick
     case SendNextRequests() =>
       if (numVisited < idSet.size) {
-        val sendOut = Math.min(toProcess.size, 10 - inProcess)
-        for (i <- 1 to sendOut) {
-          var list = mutable.ListBuffer[String]()
-          for (i <- 1 to 10) {
-            list += toProcess.dequeue()
-          }
-          val reader = context.actorOf(Props(new GameDetailActor()))
-          reader ! GetIds(list.mkString(","))
-          inProcess += 1
+        var list = mutable.ListBuffer[String]()
+        for (i <- 1 to Math.min(idsLeftToWrite, 1000)) { //max thousand ids
+          list += toProcess.dequeue()
         }
+        val reader = context.actorOf(Props(new GameDetailActor()))
+        reader ! GetIds(list.mkString(","))
+        inProcess += 1
       }
     case msg@WriteContent(doc: util.List[Game]) => {
       inProcess -= 1
-      numVisited += 10
-      doc.toList.foreach(toWrite.enqueue(_))
+      numVisited += doc.size()
+      toWrite enqueue doc.toList
     }
     case WriteNextObjects() => {
       if (numWrote < idSize) {
@@ -72,19 +77,19 @@ class GameDetailSupervisor(val idSet: Vector[String]) extends PipelineActor {
         }
       }
     }
-    case FinishedWrite(name: String) => {
-      numWrote += 1
+    case FinishedWrite(name: String, num: Int) => {
+      numWrote += num
+      idsLeftToWrite -= num
       writing -= 1
     }
     case Report() => {
       log.info("Done Writing: {} , {} in process", idSize - numWrote, writing)
-      log.info("{} Response s left in queue, {} in process", toProcess.size, inProcess)
+      log.info("{} Responses left in queue, {} in process", toProcess.size, inProcess)
       if (numWrote >= idSize) {
         log.info("Completed Game Detail Writing.. Closing")
         pipeline ! Finished()
         self ! PoisonPill
       }
-
     }
   }
 }

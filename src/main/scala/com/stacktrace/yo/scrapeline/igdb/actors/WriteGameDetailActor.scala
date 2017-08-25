@@ -1,6 +1,7 @@
 package com.stacktrace.yo.scrapeline.igdb.actors
 
 import java.io.PrintWriter
+import java.util.UUID
 
 import akka.actor.{Actor, ActorLogging, PoisonPill}
 import com.stacktrace.yo.scrapeline.core.FileWriting
@@ -11,22 +12,24 @@ class WriteGameDetailActor extends Actor with ActorLogging {
 
 
   override def receive: Receive = {
-    case msg@WriteGame(doc: Game) =>
+    case msg@WriteGame(doc: List[Game]) =>
       val ogSender = sender
       val writer = FileWriting.getJsonWriter
-      val pw = new PrintWriter("games/" + doc.getId + ".json")
+      val names = doc.map(_.getName).mkString(",")
+      val pw = new PrintWriter("games/" + UUID.randomUUID().toString + ".json")
       writer.writeValue(pw, doc)
-      pw.flush(); pw.close()
-      ogSender ! FinishedWrite(doc.getName)
+      pw.flush()
+      pw.close()
+      ogSender ! FinishedWrite(names, doc.size)
       self ! PoisonPill
   }
 }
 
 object WriteGameDetailActor {
 
-  case class WriteGame(doc: Game)
+  case class WriteGame(doc: List[Game])
 
-  case class FinishedWrite(name: String)
+  case class FinishedWrite(name: String, num: Int)
 
 }
 

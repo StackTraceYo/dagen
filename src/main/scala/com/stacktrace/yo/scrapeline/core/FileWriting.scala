@@ -10,6 +10,7 @@ object FileWriting {
 
   private lazy val writer = new ObjectMapper().registerModule(DefaultScalaModule).writerWithDefaultPrettyPrinter()
 
+
   def getJsonWriter: ObjectWriter = writer
 
 

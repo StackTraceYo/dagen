@@ -14,7 +14,7 @@ import scala.io.Source
 /**
   * Created by Stacktraceyo on 8/18/17.
   */
-class CreateVideoGameIdListPipeline extends PipelineActor {
+class GameListPipeline extends PipelineActor {
 
   import scala.collection.JavaConversions._
 
@@ -24,11 +24,7 @@ class CreateVideoGameIdListPipeline extends PipelineActor {
 
   override def receive: Receive = {
     case StartPhase() =>
-
-      if (new File("gamegenretheme.txt").exists()) {
-        log.info("GameGenreTheme Id File Exists.. Skipping Collection")
-      }
-      else {
+      if (!canSkip) {
         val themeCountids = client.themes().count().getCount.toInt
         val genreCountids = client.genres().count().getCount.toInt
         val ids = (1 to Math.max(themeCountids, genreCountids)).toVector.mkString(",")
@@ -82,6 +78,15 @@ class CreateVideoGameIdListPipeline extends PipelineActor {
       log.info("Found {} game ids", gameMap.size)
       sender() ! PhaseFinished("CreateVideoGameIdListPipeline")
       self ! PoisonPill
+  }
+
+
+  override def canSkip: Boolean = {
+    if (new File("gamegenretheme.txt").exists()) {
+      log.info("GameGenreTheme Id File Exists.. Skipping Collection")
+      true
+    }
+    false
   }
 
   def sortById(s1: (String, String), s2: (String, String)): Boolean = {

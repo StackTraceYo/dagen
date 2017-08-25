@@ -7,18 +7,25 @@ import akka.actor.ActorRef
   */
 object Protocol {
 
+  //for reporting
   case class Report()
 
+  //starts the system at the phase passed in or whatever the default is
   case class Start(phase: String = "")
 
+  //pipeline is finished
   case class Finished()
 
+  //Begin Phase
   case class StartPhase()
 
+  //Next Phase
   case class NextPhase(previous: String)
 
+  //Phase Is completed with name @name
   case class PhaseFinished(name: String)
 
-  case class StartSupervisor(pipelin: ActorRef)
+  //Delegate from pipeline
+  case class StartDelegate(pipeline: ActorRef)
 
 }
