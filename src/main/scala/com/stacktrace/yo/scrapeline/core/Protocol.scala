@@ -25,7 +25,13 @@ object Protocol {
   //Phase Is completed with name @name
   case class PhaseFinished(name: String)
 
+  //Phase Is partially done and next one can start in parallel
+  case class PhasePartial(name: String)
+
   //Delegate from pipeline
   case class StartDelegate(pipeline: ActorRef)
+
+  //Worker Is Working
+  case class Progress()
 
 }

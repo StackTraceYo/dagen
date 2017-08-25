@@ -76,7 +76,7 @@ class GameListPipeline extends PipelineActor {
       finalBw.close()
       log.info("Finished Video Game Name List Flow..")
       log.info("Found {} game ids", gameMap.size)
-      sender() ! PhaseFinished("CreateVideoGameIdListPipeline")
+      sender() ! PhaseFinished("GameListPipeline")
       self ! PoisonPill
   }
 

@@ -3,7 +3,7 @@ package com.stacktrace.yo.scrapeline.igdb.actors
 import java.util
 
 import akka.actor.{ActorRef, Cancellable, PoisonPill, Props}
-import com.stacktrace.yo.scrapeline.core.Protocol.{Finished, Report, StartDelegate}
+import com.stacktrace.yo.scrapeline.core.Protocol.{Finished, Progress, Report, StartDelegate}
 import com.stacktrace.yo.scrapeline.core.pipeline.Delegator
 import com.stacktrace.yo.scrapeline.igdb.actors.GameDetailActor.{GetIds, WriteContent}
 import com.stacktrace.yo.scrapeline.igdb.actors.GameDetailSupervisor.WriteNextObjects
@@ -81,6 +81,7 @@ class GameDetailSupervisor(val idSet: Vector[String]) extends Delegator {
       numWrote += num
       idsLeftToWrite -= num
       writing -= 1
+      pipeline ! Progress()
     }
     case Report() => {
       log.info("Done Writing: {} , {} in process", idSize - numWrote, writing)

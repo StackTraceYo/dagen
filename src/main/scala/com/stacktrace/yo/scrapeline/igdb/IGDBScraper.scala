@@ -19,5 +19,5 @@ object IGDBScraper extends App {
 
 
   val controller = as.actorOf(Props(new Engine()))
-  controller ! Start("CreateVideoGameIdListPipeline")
+  controller ! Start("GameListPipeline")
 }

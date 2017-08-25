@@ -2,11 +2,11 @@ package com.stacktrace.yo.scrapeline.igdb.pipeline
 
 import java.io.File
 
-import akka.actor.{ActorRef, Props}
+import akka.actor.{ActorRef, PoisonPill, Props}
 import com.fasterxml.jackson.databind.{DeserializationFeature, ObjectMapper}
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
 import com.stacktrace.yo.scrapeline.core.IGDBAPIClient
-import com.stacktrace.yo.scrapeline.core.Protocol.{Finished, PhaseFinished, StartDelegate, StartPhase}
+import com.stacktrace.yo.scrapeline.core.Protocol._
 import com.stacktrace.yo.scrapeline.core.pipeline.PipelineActor
 import com.stacktrace.yo.scrapeline.igdb.actors.GameDetailSupervisor
 import org.stacktrace.yo.igdb.client.IGDBClient
@@ -36,6 +36,9 @@ class GameDetailPipeline extends PipelineActor {
       }
     case Finished() =>
       controller ! PhaseFinished("GameDetailPipeline")
+      self ! PoisonPill
+    case Progress() =>
+      controller ! PhasePartial("GameDetailPipeline")
   }
 
 

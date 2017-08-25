@@ -17,7 +17,7 @@ class Engine(implicit executionContext: ExecutionContext) extends Actor with Act
   var phasesRunning: mutable.ListBuffer[String] = mutable.ListBuffer[String]()
   var phasesCompleted: mutable.ListBuffer[String] = mutable.ListBuffer[String]()
 
-  val tick: Cancellable = context.system.scheduler.schedule(0 millis, 15000 millis, self, Report())
+  val tick: Cancellable = context.system.scheduler.schedule(0 millis, 10000 millis, self, Report())
 
 
   override def receive: Receive = {
@@ -30,14 +30,19 @@ class Engine(implicit executionContext: ExecutionContext) extends Actor with Act
       phasesRunning = phasesRunning.filter(_ != name)
       self ! NextPhase(name)
       self ! Report()
+    case PhasePartial(name: String) =>
+      self ! NextPhase(name)
+      self ! Report()
     case NextPhase(fin: String) =>
       fin match {
-        case "CreateVideoGameIdListPipeline" =>
+        case "GameListPipeline" =>
           val phase = context.actorOf(Props(new GameDetailPipeline()))
           phase ! StartPhase()
           phasesRunning += "GameDetailPipeline"
         case "GameDetailPipeline" =>
-
+        //          val phase = context.actorOf(Props(new GameDetailPipeline()))
+        //          phase ! StartPhase()
+        //          phasesRunning += "GameDetailPipeline"
       }
     case Report() => {
       log.info("Currenly Running : {}", phasesRunning.mkString(","))
@@ -52,7 +57,7 @@ class Engine(implicit executionContext: ExecutionContext) extends Actor with Act
   private def getPipeline(name: String): ActorRef = {
     val actor = context.actorOf(Props(
       name match {
-        case "CreateVideoGameIdListPipeline" => new GameListPipeline()
+        case "GameListPipeline" => new GameListPipeline()
         case "GameDetailPipeline" => new GameDetailPipeline()
         case _ => new GameListPipeline
       }
