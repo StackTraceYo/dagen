@@ -1,10 +1,10 @@
-package com.stacktrace.yo.scrapeline.igdb.actors
+package com.stacktrace.yo.scrapeline.igdb.pipeline.detail.actor
 
 import java.util
 
 import akka.actor.{Actor, ActorLogging, PoisonPill}
 import com.stacktrace.yo.scrapeline.core.IGDBAPIClient
-import com.stacktrace.yo.scrapeline.igdb.actors.GameDetailActor.{GetIds, WriteContent}
+import com.stacktrace.yo.scrapeline.igdb.pipeline.detail.actor.GameDetailActor.{GetIds, WriteContent}
 import org.stacktrace.yo.igdb.client.IGDBClient
 import org.stacktrace.yo.igdb.client.game.GameFields
 import org.stacktrace.yo.igdb.model.Game

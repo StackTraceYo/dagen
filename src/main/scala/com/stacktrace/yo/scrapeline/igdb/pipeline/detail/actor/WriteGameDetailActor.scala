@@ -1,11 +1,11 @@
-package com.stacktrace.yo.scrapeline.igdb.actors
+package com.stacktrace.yo.scrapeline.igdb.pipeline.detail.actor
 
 import java.io.PrintWriter
 import java.util.UUID
 
 import akka.actor.{Actor, ActorLogging, PoisonPill}
 import com.stacktrace.yo.scrapeline.core.FileWriting
-import com.stacktrace.yo.scrapeline.igdb.actors.WriteGameDetailActor.{FinishedWrite, WriteGame}
+import com.stacktrace.yo.scrapeline.igdb.pipeline.detail.actor.WriteGameDetailActor.{FinishedWrite, WriteGame}
 import org.stacktrace.yo.igdb.model.Game
 
 class WriteGameDetailActor extends Actor with ActorLogging {

@@ -1,4 +1,4 @@
-package com.stacktrace.yo.scrapeline.igdb.pipeline
+package com.stacktrace.yo.scrapeline.igdb.pipeline.detail
 
 import java.io.File
 
@@ -8,7 +8,7 @@ import com.fasterxml.jackson.module.scala.DefaultScalaModule
 import com.stacktrace.yo.scrapeline.core.IGDBAPIClient
 import com.stacktrace.yo.scrapeline.core.Protocol._
 import com.stacktrace.yo.scrapeline.core.pipeline.PipelineActor
-import com.stacktrace.yo.scrapeline.igdb.actors.GameDetailSupervisor
+import com.stacktrace.yo.scrapeline.igdb.pipeline.detail.actor.GameDetailSupervisor
 import org.stacktrace.yo.igdb.client.IGDBClient
 import org.stacktrace.yo.igdb.model.Game
 

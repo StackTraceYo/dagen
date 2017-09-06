@@ -5,3 +5,4 @@ scrakka.iml
 games/
 project/target/
 target/
+*.zip

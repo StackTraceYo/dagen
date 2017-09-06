@@ -1,7 +1,7 @@
-package com.stacktrace.yo.scrapeline.igdb.actors
+package com.stacktrace.yo.scrapeline.igdb.pipeline.extract.actor
 
 import akka.actor.{Actor, ActorLogging}
-import com.stacktrace.yo.scrapeline.igdb.actors.GameDataExtractionDelegate.Process
+import com.stacktrace.yo.scrapeline.igdb.pipeline.extract.actor.GameDataExtractionDelegate.Process
 import org.stacktrace.yo.igdb.model.Game
 
 /**

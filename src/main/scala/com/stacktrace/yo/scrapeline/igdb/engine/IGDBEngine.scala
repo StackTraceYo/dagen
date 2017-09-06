@@ -2,7 +2,9 @@ package com.stacktrace.yo.scrapeline.igdb.engine
 
 import akka.actor.{Actor, ActorLogging, ActorRef, Cancellable, Props}
 import com.stacktrace.yo.scrapeline.core.Protocol._
-import com.stacktrace.yo.scrapeline.igdb.pipeline.{GameDetailExtractionPipeline, GameDetailPipeline, GameListPipeline}
+import com.stacktrace.yo.scrapeline.igdb.pipeline.detail.GameDetailPipeline
+import com.stacktrace.yo.scrapeline.igdb.pipeline.extract.GameDetailExtractionPipeline
+import com.stacktrace.yo.scrapeline.igdb.pipeline.list.GameListPipeline
 
 import scala.collection.mutable
 import scala.concurrent.ExecutionContext

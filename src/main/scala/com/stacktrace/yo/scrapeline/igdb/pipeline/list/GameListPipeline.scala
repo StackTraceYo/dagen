@@ -1,4 +1,4 @@
-package com.stacktrace.yo.scrapeline.igdb.pipeline
+package com.stacktrace.yo.scrapeline.igdb.pipeline.list
 
 import java.io.{BufferedWriter, File, FileWriter}
 
