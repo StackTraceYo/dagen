@@ -334,7 +334,7 @@
 338,Action/Science fiction/Shooter
 339,Shooter/Puzzle
 340,Science fiction/Real Time Strategy (RTS)/Strategy
-341,Action/Fantasy/Platform
+341,Action/Fantasy/Platform/Puzzle/Role-playing (RPG)
 342,Action/Science fiction/Shooter
 343,Action/Shooter
 344,Action/Shooter
@@ -907,7 +907,7 @@
 918,Science fiction/Real Time Strategy (RTS)/Strategy
 919,Science fiction/Point-and-click
 920,Simulator
-921,Simulator
+921,Simulator/Strategy
 922,Science fiction/Shooter
 923,Science fiction/Shooter
 924,Science fiction/Simulator
@@ -1448,7 +1448,7 @@
 1477,Action/Science fiction/Shooter
 1478,Action/Shooter
 1479,Action/Science fiction/Shooter
-1480,Shooter
+1480,Action/Science fiction/Shooter
 1481,Action/Science fiction/Shooter
 1482,Shooter
 1483,Shooter
@@ -2612,12 +2612,12 @@
 2732,Puzzle
 2733,Sport
 2734,Shooter/Platform
-2735,Action/Platform
+2735,Action
 2736,Action/Puzzle/Strategy
 2738,Action
 2739,Action/Puzzle
 2740,Action/Puzzle
-2741,Shooter
+2741,Action/Shooter
 2742,Action/Fantasy/Platform
 2743,Racing
 2744,Puzzle
@@ -2962,7 +2962,7 @@
 3097,Action/Horror/Point-and-click
 3098,Action/Fantasy/Platform
 3099,Action/Real Time Strategy (RTS)/Simulator/Strategy
-3100,Science fiction/Survival/Role-playing (RPG)/Strategy/Turn-based strategy (TBS)
+3100,Science fiction/Survival/Role-playing (RPG)
 3101,Science fiction/Survival/Role-playing (RPG)/Strategy/Turn-based strategy (TBS)
 3102,Action/Science fiction/Simulator
 3103,Action/Fantasy/Role-playing (RPG)
@@ -3500,7 +3500,7 @@
 3660,Strategy
 3661,Puzzle/Simulator
 3662,Action/Puzzle
-3663,Action/Platform
+3663,Action/Fantasy/Platform
 3664,Action/Platform
 3665,Action/Fantasy/Shooter
 3666,Action/Platform
@@ -4273,7 +4273,7 @@
 4495,Shooter
 4496,Fantasy/Role-playing (RPG)
 4497,Action/Science fiction/Strategy
-4498,Action/Shooter
+4498,Action/Science fiction/Shooter
 4499,Science fiction/Puzzle/Strategy
 4500,Action
 4501,Action/Shooter
@@ -4392,7 +4392,7 @@
 4621,Action/Platform
 4622,Action/Shooter/Platform
 4623,Fantasy/Shooter
-4624,Fighting/Sport
+4624,Action/Fighting
 4625,Shooter
 4626,Racing
 4627,Platform
@@ -5176,7 +5176,7 @@
 5465,Fighting/Sport
 5466,Platform
 5467,Action/Fantasy/Role-playing (RPG)/Simulator
-5468,Action/Shooter/Simulator
+5468,Action/Shooter
 5470,Action/Fantasy
 5471,Sport
 5472,Action/Shooter
@@ -5192,7 +5192,7 @@
 5483,Action/Sport
 5484,Action/Sport
 5485,Action
-5486,Action/Simulator
+5486,Action/Fighting/Shooter/Strategy
 5487,Role-playing (RPG)/Strategy
 5488,Simulator
 5489,Action/Fantasy/Role-playing (RPG)
@@ -5772,7 +5772,7 @@
 6093,Sport
 6094,Shooter
 6095,Action/Platform
-6096,Puzzle
+6096,Action/Platform/Puzzle
 6097,Action/Fighting
 6098,Action/Platform
 6099,Fantasy/Role-playing (RPG)
@@ -6556,7 +6556,7 @@
 6927,Sport
 6928,Action/Shooter
 6929,Action/Horror/Platform
-6930,Fighting
+6930,Action/Fighting
 6931,Shooter/Simulator/Sport
 6932,Shooter/Simulator/Sport
 6933,Action/Fighting/Shooter/Platform/Puzzle
@@ -6719,7 +6719,7 @@
 7094,Action/Fantasy
 7095,Action/Fantasy/Fighting/Role-playing (RPG)
 7096,Action/Racing
-7098,Action/Fighting
+7098,Action/Fighting/Strategy
 7099,Action/Fighting
 7100,Action/Fighting
 7101,Action/Fighting/Role-playing (RPG)
@@ -6757,7 +6757,7 @@
 7137,Racing
 7138,Sport
 7139,Action/Racing/Sport
-7140,Action/Racing
+7140,Action/Racing/Simulator/Sport
 7141,Action/Racing
 7142,Action/Racing
 7143,Action/Racing
@@ -7089,7 +7089,7 @@
 7500,Sport
 7501,Fantasy/Point-and-click/Puzzle
 7502,Platform
-7503,Puzzle/Strategy
+7503,Action/Puzzle/Strategy
 7504,Action/Horror/Survival/Simulator
 7505,Action/Fantasy/Role-playing (RPG)
 7506,Simulator/Strategy
@@ -7342,7 +7342,7 @@
 7791,Puzzle
 7792,Action/Platform
 7793,Action
-7794,Platform
+7794,Action/Platform
 7795,Platform
 7796,Action
 7797,Puzzle
@@ -8208,7 +8208,7 @@
 8729,Action/Horror/Role-playing (RPG)
 8731,Action/Science fiction/Fighting
 8732,Fantasy/Role-playing (RPG)/Strategy
-8733,Action/Racing
+8733,Action/Racing/Simulator
 8734,Action/Fantasy/Platform
 8735,Action/Platform
 8736,Fantasy/Fighting/Sport
@@ -8591,7 +8591,7 @@
 9152,Fighting/Sport
 9153,Fighting/Sport
 9154,Action/Platform
-9155,Racing
+9155,Action/Racing
 9156,Racing
 9157,Action/Racing
 9158,Racing
@@ -8673,7 +8673,7 @@
 9244,Action/Platform
 9245,Action/Horror/Survival/Shooter
 9246,Thriller
-9247,Sport
+9247,Action/Simulator/Sport
 9248,Simulator
 9249,Point-and-click
 9250,Platform/Puzzle/Racing/Sport
@@ -8924,7 +8924,7 @@
 9537,Simulator
 9538,Science fiction/Real Time Strategy (RTS)/Strategy
 9539,Science fiction/Role-playing (RPG)/Strategy
-9540,Action/Fantasy/Role-playing (RPG)
+9540,Action/Fantasy/Platform/Role-playing (RPG)
 9541,Point-and-click
 9542,Fantasy/Real Time Strategy (RTS)
 9543,Horror/Thriller/Point-and-click/Puzzle
@@ -10211,7 +10211,7 @@
 11197,Fantasy/Role-playing (RPG)/Turn-based strategy (TBS)
 11198,Action/Science fiction/Racing/Sport
 11199,Action/Fantasy/Role-playing (RPG)
-11200,Strategy
+11200,Action/Strategy
 11201,Action/Shooter
 11203,Action/Science fiction/Shooter/Simulator/Strategy
 11204,Horror/Survival
@@ -10794,7 +10794,7 @@
 11880,Science fiction/Shooter
 11881,Action/Science fiction/Shooter/Platform
 11882,Simulator
-11883,Action/Fighting
+11883,Action/Fantasy/Fighting
 11884,Sport
 11885,Action/Shooter/Racing
 11886,Science fiction/Sport
@@ -10814,6 +10814,7 @@
 11902,Racing
 11903,Strategy/Turn-based strategy (TBS)
 11904,Puzzle
+11905,Action/Racing
 11906,Action/Fantasy/Shooter
 11907,Simulator
 11909,Sport
@@ -10985,7 +10986,7 @@
 12088,Simulator
 12091,Sport
 12092,Shooter
-12093,Racing
+12093,Racing/Simulator
 12094,Fantasy
 12095,Sport
 12096,Fighting
@@ -11105,7 +11106,7 @@
 12232,Horror/Puzzle
 12233,Shooter
 12234,Action/Shooter/Platform
-12235,Science fiction/Shooter
+12235,Action/Science fiction/Shooter
 12236,Science fiction/Shooter
 12237,Sport
 12238,Action/Platform
@@ -11288,7 +11289,7 @@
 12452,Puzzle
 12453,Horror/Platform
 12454,Fantasy/Fighting/Role-playing (RPG)
-12455,Science fiction/Platform
+12455,Action/Science fiction/Platform
 12456,Action/Platform
 12457,Puzzle
 12459,Strategy
@@ -11372,7 +11373,7 @@
 12546,Simulator
 12547,Racing
 12548,Platform
-12550,Racing
+12550,Action/Racing
 12551,Racing
 12552,Racing
 12553,Platform/Puzzle
@@ -11432,7 +11433,7 @@
 12609,Fantasy/Role-playing (RPG)
 12610,Puzzle
 12611,Action/Platform
-12612,Science fiction/Shooter
+12612,Action/Science fiction/Shooter
 12613,Shooter
 12614,Science fiction/Shooter
 12615,Action/Shooter
@@ -11653,10 +11654,11 @@
 12859,Science fiction/Shooter
 12860,Fighting
 12861,Action/Science fiction/Shooter
+12862,Action/Shooter
 12863,Platform
-12864,Fighting
+12864,Action/Fantasy/Fighting
 12865,Action
-12866,Shooter
+12866,Action/Fantasy/Science fiction/Shooter
 12868,Science fiction/Shooter
 12869,Simulator/Sport
 12870,Action/Science fiction/Shooter
@@ -12076,7 +12078,7 @@
 13422,Action/Science fiction/Shooter/Puzzle
 13423,Fantasy
 13424,Action/Platform
-13425,Science fiction/Shooter
+13425,Action/Science fiction/Shooter
 13426,Sport
 13428,Action/Platform/Strategy
 13429,Sport
@@ -12141,6 +12143,7 @@
 13525,Sport
 13527,Shooter
 13528,Action
+13529,Thriller
 13531,Sport
 13532,Sport
 13533,Sport
@@ -12172,7 +12175,7 @@
 13564,Sport
 13565,Sport
 13566,Shooter/Simulator/Strategy
-13567,Action/Science fiction
+13567,Action/Science fiction/Shooter
 13568,Action/Fantasy/Shooter
 13571,Science fiction/Shooter
 13573,Action/Puzzle
@@ -12324,7 +12327,7 @@
 13831,Action/Platform
 13832,Science fiction/Shooter
 13833,Action/Platform
-13838,Role-playing (RPG)
+13838,Fantasy/Role-playing (RPG)
 13839,Action/Science fiction/Shooter
 13841,Action/Strategy
 13842,Turn-based strategy (TBS)
@@ -12434,6 +12437,7 @@
 14074,Role-playing (RPG)
 14075,Action/Science fiction/Real Time Strategy (RTS)/Role-playing (RPG)/Strategy
 14078,Action
+14079,Horror/Platform
 14081,Role-playing (RPG)
 14085,Science fiction/Sport
 14094,Action/Science fiction/Shooter
@@ -12883,7 +12887,7 @@
 14725,Fantasy/Role-playing (RPG)
 14726,Action/Fantasy/Role-playing (RPG)
 14727,Action/Shooter
-14728,Science fiction/Shooter
+14728,Action/Science fiction/Shooter
 14729,Fantasy/Role-playing (RPG)
 14730,Fantasy/Role-playing (RPG)
 14731,Action
@@ -13180,6 +13184,7 @@
 15211,Strategy
 15212,Strategy
 15214,Action/Science fiction/Shooter
+15216,Action/Puzzle
 15218,Action
 15221,Simulator
 15222,Sport
@@ -13193,6 +13198,7 @@
 15241,Sport
 15246,Sport
 15247,Action
+15248,Fantasy
 15249,Shooter
 15250,Action/Science fiction/Shooter
 15252,Action
@@ -13332,7 +13338,7 @@
 15488,Platform/Puzzle
 15489,Fantasy
 15490,Action/Fantasy/Fighting/Role-playing (RPG)
-15491,Thriller
+15491,Action/Thriller/Role-playing (RPG)
 15492,Fantasy
 15493,Fantasy
 15494,Action
@@ -13480,6 +13486,7 @@
 15819,Turn-based strategy (TBS)
 15820,Action/Shooter
 15821,Platform/Puzzle
+15823,Role-playing (RPG)
 15828,Action
 15829,Action/Platform
 15830,Horror
@@ -14129,7 +14136,7 @@
 17029,Action/Fantasy/Role-playing (RPG)/Simulator
 17030,Action/Science fiction
 17031,Simulator
-17032,Action/Role-playing (RPG)
+17032,Action/Horror/Survival/Role-playing (RPG)
 17033,Action/Strategy
 17034,Strategy
 17035,Action
@@ -14712,7 +14719,7 @@
 17941,Action
 17943,Action/Role-playing (RPG)
 17945,Fantasy/Puzzle
-17946,Simulator/Sport/Strategy
+17946,Action/Simulator/Sport/Strategy
 17947,Simulator
 17949,Strategy
 17950,Simulator
@@ -14866,7 +14873,7 @@
 18138,Action/Fighting
 18139,Action/Science fiction/Shooter/Platform
 18140,Action/Shooter
-18141,Platform/Puzzle
+18141,Science fiction/Platform/Puzzle
 18142,Action/Fantasy/Platform/Puzzle
 18143,Action/Sport
 18144,Sport
@@ -15952,7 +15959,7 @@
 19444,Point-and-click/Simulator
 19445,Fantasy/Role-playing (RPG)/Simulator/Strategy
 19446,Point-and-click
-19448,Science fiction
+19448,Action/Science fiction
 19449,Action/Fantasy/Science fiction/Fighting
 19450,Action
 19452,Action/Fantasy/Platform
@@ -16043,6 +16050,7 @@
 19564,Action/Science fiction
 19565,Action
 19566,Science fiction/Simulator
+19567,Role-playing (RPG)
 19568,Action/Role-playing (RPG)/Strategy
 19569,Action/Sport
 19570,Action/Horror
@@ -16070,6 +16078,7 @@
 19595,Action/Science fiction/Fighting
 19596,Action/Fantasy/Puzzle/Role-playing (RPG)
 19597,Horror/Thriller
+19598,Platform/Puzzle
 19600,Action/Fantasy
 19601,Puzzle/Turn-based strategy (TBS)
 19603,Science fiction/Puzzle
@@ -16233,7 +16242,7 @@
 19783,Action/Racing/Sport
 19784,Action/Science fiction/Platform
 19785,Simulator
-19786,Action/Strategy
+19786,Action
 19787,Simulator/Sport
 19788,Role-playing (RPG)/Simulator/Strategy
 19789,Action/Science fiction/Shooter
@@ -16419,7 +16428,7 @@
 20033,Fighting
 20037,Action/Simulator
 20038,Action/Horror/Shooter
-20040,Science fiction
+20040,Action/Science fiction
 20041,Action/Shooter
 20042,Platform
 20043,Simulator
@@ -17589,6 +17598,7 @@
 22192,Racing
 22219,Racing
 22220,Action/Fighting
+22221,Fighting
 22223,Platform
 22226,Action/Shooter
 22227,Strategy
@@ -17649,6 +17659,7 @@
 22355,Science fiction/Shooter/Platform
 22356,Simulator
 22358,Action/Science fiction/Platform
+22359,Action/Role-playing (RPG)
 22360,Puzzle
 22361,Thriller/Point-and-click
 22362,Action/Science fiction
@@ -18176,7 +18187,7 @@
 23245,Action/Puzzle
 23246,Science fiction/Real Time Strategy (RTS)
 23247,Fantasy/Point-and-click
-23248,Survival
+23248,Survival/Simulator/Strategy
 23249,Point-and-click
 23251,Horror/Survival/Shooter/Puzzle
 23258,Action
@@ -18305,6 +18316,7 @@
 23479,Sport
 23480,Action
 23481,Action/Science fiction/Shooter/Strategy
+23483,Puzzle
 23486,Action/Role-playing (RPG)/Simulator/Strategy
 23488,Fantasy
 23489,Role-playing (RPG)
@@ -18665,7 +18677,7 @@
 24087,Action/Shooter
 24088,Action/Role-playing (RPG)
 24089,Simulator/Sport
-24090,Shooter
+24090,Action/Shooter
 24091,Simulator
 24092,Strategy
 24094,Sport
@@ -18869,7 +18881,7 @@
 24466,Action
 24467,Science fiction/Shooter
 24468,Action
-24469,Science fiction/Shooter
+24469,Action/Science fiction/Shooter/Role-playing (RPG)
 24470,Fantasy/Role-playing (RPG)
 24472,Puzzle
 24473,Action/Science fiction
@@ -19383,6 +19395,7 @@
 25223,Action
 25225,Role-playing (RPG)
 25226,Action
+25229,Strategy
 25230,Action
 25231,Fantasy/Role-playing (RPG)
 25232,Action/Fantasy/Role-playing (RPG)
@@ -20570,7 +20583,7 @@
 27038,Action/Role-playing (RPG)
 27040,Horror/Survival/Shooter
 27041,Fighting
-27042,Fantasy/Puzzle/Sport
+27042,Action/Fantasy/Puzzle/Sport
 27043,Action/Racing
 27045,Puzzle
 27046,Fantasy/Role-playing (RPG)
@@ -20773,6 +20786,7 @@
 27304,Action/Fantasy/Role-playing (RPG)
 27309,Role-playing (RPG)
 27310,Action/Horror/Survival/Puzzle
+27314,Action
 27316,Action
 27317,Fantasy/Simulator
 27318,Simulator
@@ -20938,7 +20952,7 @@
 27527,Fantasy
 27529,Action/Platform
 27530,Fantasy/Role-playing (RPG)/Strategy
-27531,Horror
+27531,Horror/Point-and-click
 27532,Platform/Puzzle
 27533,Action/Shooter
 27534,Action/Fighting
@@ -21050,6 +21064,8 @@
 27689,Action/Shooter
 27690,Fantasy/Role-playing (RPG)
 27691,Role-playing (RPG)
+27692,Action
+27694,Strategy
 27696,Fantasy/Role-playing (RPG)/Turn-based strategy (TBS)
 27697,Shooter/Simulator/Sport
 27698,Action
@@ -21367,7 +21383,7 @@
 28121,Horror
 28122,Fantasy/Strategy
 28123,Action/Science fiction/Survival/Racing
-28124,Action/Science fiction
+28124,Action/Science fiction/Puzzle
 28125,Fantasy/Puzzle
 28126,Action/Fantasy/Role-playing (RPG)
 28127,Action/Fantasy
@@ -21411,6 +21427,7 @@
 28171,Action/Simulator/Strategy
 28172,Action
 28173,Action/Survival/Shooter/Strategy
+28177,Fighting
 28178,Action/Horror
 28182,Role-playing (RPG)/Strategy/Turn-based strategy (TBS)
 28183,Action/Shooter
@@ -21789,9 +21806,10 @@
 28741,Action
 28745,Action
 28746,Simulator/Sport/Strategy
+28748,Action
 28749,Action/Simulator
 28750,Action
-28751,Action
+28751,Action/Shooter
 28752,Strategy
 28753,Simulator/Strategy
 28755,Strategy
@@ -21849,6 +21867,7 @@
 28825,Action/Science fiction/Shooter/Platform/Role-playing (RPG)
 28826,Action/Shooter/Platform
 28829,Racing
+28831,Action
 28835,Fighting
 28836,Action/Sport
 28838,Racing/Simulator
@@ -22052,7 +22071,7 @@
 29094,Action/Role-playing (RPG)
 29096,Action/Strategy
 29097,Strategy
-29098,Action
+29098,Action/Simulator
 29101,Role-playing (RPG)
 29103,Action/Simulator
 29105,Role-playing (RPG)
@@ -22399,7 +22418,7 @@
 29574,Racing/Simulator/Sport
 29575,Role-playing (RPG)/Strategy
 29576,Action/Strategy
-29578,Action
+29578,Action/Fantasy
 29579,Action
 29580,Action/Racing/Simulator/Sport
 29581,Action
@@ -22807,7 +22826,7 @@
 30128,Action
 30129,Action
 30130,Action/Racing
-30131,Action
+30131,Action/Science fiction/Shooter
 30132,Role-playing (RPG)/Strategy
 30133,Strategy
 30134,Role-playing (RPG)
@@ -22821,7 +22840,7 @@
 30146,Simulator
 30147,Strategy
 30148,Role-playing (RPG)
-30150,Action
+30150,Action/Shooter
 30152,Action
 30154,Action
 30155,Simulator
@@ -22976,7 +22995,7 @@
 30352,Simulator
 30353,Simulator
 30356,Action/Role-playing (RPG)
-30360,Role-playing (RPG)/Strategy
+30360,Fantasy/Role-playing (RPG)/Strategy
 30361,Action
 30362,Strategy
 30363,Action
@@ -23669,7 +23688,7 @@
 31299,Strategy
 31300,Role-playing (RPG)
 31302,Action
-31304,Simulator/Sport
+31304,Action/Simulator/Sport/Strategy
 31306,Action
 31307,Action/Role-playing (RPG)
 31308,Simulator
@@ -23785,7 +23804,7 @@
 31454,Action/Strategy
 31455,Action
 31456,Action
-31457,Action
+31457,Action/Shooter
 31458,Action
 31459,Action
 31460,Action
@@ -24630,7 +24649,7 @@
 32614,Action/Role-playing (RPG)
 32615,Action
 32616,Action
-32617,Sport
+32617,Action/Sport
 32618,Action/Racing/Sport
 32619,Action
 32620,Action/Role-playing (RPG)/Simulator
@@ -25247,7 +25266,7 @@
 33451,Action
 33452,Action
 33453,Action/Simulator
-33454,Action
+33454,Action/Horror/Shooter
 33455,Action/Racing/Simulator
 33456,Action
 33458,Action/Strategy
@@ -25255,7 +25274,7 @@
 33460,Simulator
 33461,Action/Racing
 33462,Action/Racing/Sport
-33463,Simulator/Sport
+33463,Action/Simulator/Sport
 33464,Action
 33465,Simulator
 33466,Action
@@ -25351,6 +25370,7 @@
 33584,Simulator/Sport/Strategy
 33586,Sport
 33587,Role-playing (RPG)
+33588,Strategy
 33589,Role-playing (RPG)/Strategy
 33590,Simulator/Strategy
 33591,Action/Role-playing (RPG)
@@ -25459,7 +25479,7 @@
 33728,Action/Strategy
 33729,Action
 33730,Simulator/Strategy
-33731,Action
+33731,Action/Science fiction/Shooter
 33732,Role-playing (RPG)
 33733,Action
 33735,Strategy
@@ -26379,7 +26399,7 @@
 34975,Action
 34976,Role-playing (RPG)
 34977,Role-playing (RPG)
-34978,Action/Racing/Simulator
+34978,Action/Racing/Simulator/Sport
 34979,Racing
 34980,Racing
 34982,Action
@@ -26435,7 +26455,7 @@
 35055,Role-playing (RPG)
 35057,Action
 35058,Strategy
-35059,Action
+35059,Action/Fantasy/Shooter
 35064,Action/Simulator
 35065,Action
 35067,Strategy
@@ -26637,7 +26657,7 @@
 35312,Action/Strategy
 35313,Action
 35314,Action/Sport
-35315,Simulator/Sport/Strategy
+35315,Action/Simulator/Sport/Strategy
 35316,Action
 35318,Action
 35319,Racing/Simulator/Sport
@@ -27182,7 +27202,6 @@
 36031,Action/Strategy
 36032,Action/Role-playing (RPG)
 36034,Role-playing (RPG)/Strategy
-36035,Action/Role-playing (RPG)/Sport/Strategy
 36036,Role-playing (RPG)/Strategy
 36037,Action/Role-playing (RPG)
 36038,Action
@@ -27524,7 +27543,7 @@
 36507,Horror/Point-and-click/Puzzle
 36508,Role-playing (RPG)
 36509,Puzzle
-36515,Shooter
+36515,Action/Fantasy/Science fiction/Shooter/Role-playing (RPG)
 36517,Action/Simulator/Strategy
 36518,Action
 36519,Action
@@ -27594,12 +27613,14 @@
 36597,Action/Role-playing (RPG)
 36598,Action
 36599,Action
+36600,Simulator
 36602,Action/Role-playing (RPG)
 36607,Shooter
 36608,Action/Role-playing (RPG)
 36609,Action/Role-playing (RPG)
 36611,Fantasy/Role-playing (RPG)/Strategy
 36612,Fantasy/Role-playing (RPG)
+36614,Simulator/Strategy
 36615,Action/Science fiction/Shooter
 36616,Science fiction/Real Time Strategy (RTS)/Simulator/Strategy
 36618,Action/Simulator
@@ -27638,6 +27659,7 @@
 36659,Action/Science fiction/Shooter
 36660,Music
 36662,Action/Racing
+36663,Action
 36665,Sport
 36669,Horror/Thriller
 36670,Action/Shooter/Strategy
@@ -27720,6 +27742,7 @@
 36763,Science fiction/Simulator/Strategy
 36766,Puzzle
 36777,Simulator
+36780,Action
 36781,Action/Survival/Shooter
 36784,Puzzle
 36787,Shooter/Role-playing (RPG)
@@ -27736,6 +27759,7 @@
 36812,Real Time Strategy (RTS)
 36813,Action/Horror/Shooter
 36814,Fantasy/Role-playing (RPG)
+36816,Puzzle
 36817,Simulator
 36818,Strategy
 36819,Action/Role-playing (RPG)
@@ -27781,6 +27805,7 @@
 36865,Action/Science fiction/Shooter
 36866,Action/Science fiction/Shooter/Strategy
 36868,Action/Platform
+36869,Role-playing (RPG)
 36870,Fantasy/Real Time Strategy (RTS)
 36871,Action/Fantasy/Role-playing (RPG)
 36872,Racing/Simulator
@@ -27859,13 +27884,14 @@
 36987,Racing
 36988,Real Time Strategy (RTS)/Strategy
 36996,Role-playing (RPG)
-36999,Science fiction/Real Time Strategy (RTS)
+36999,Action/Science fiction/Real Time Strategy (RTS)/Strategy
 37001,Fantasy
 37002,Fantasy
 37003,Strategy
 37005,Action
 37008,Action
 37009,Action
+37010,Simulator
 37011,Horror/Puzzle
 37013,Action
 37014,Action/Strategy
@@ -27947,6 +27973,7 @@
 37138,Strategy
 37139,Racing
 37140,Action/Science fiction/Platform
+37143,Action/Shooter
 37145,Action/Science fiction/Platform
 37146,Action
 37148,Music
@@ -28064,7 +28091,7 @@
 37306,Turn-based strategy (TBS)
 37307,Action/Shooter
 37308,Action/Role-playing (RPG)
-37310,Shooter
+37310,Action/Science fiction/Shooter
 37311,Simulator
 37312,Sport
 37313,Role-playing (RPG)
@@ -29510,7 +29537,7 @@
 39103,Platform
 39104,Sport
 39109,Simulator
-39115,Sport
+39115,Action/Simulator/Sport
 39117,Racing
 39118,Action/Horror
 39121,Sport
@@ -29518,6 +29545,7 @@
 39123,Sport
 39125,Action/Science fiction/Shooter
 39126,Action/Science fiction/Shooter
+39127,Action/Shooter
 39134,Action/Fantasy/Platform
 39136,Action/Fantasy/Shooter
 39137,Strategy
@@ -29619,7 +29647,7 @@
 39305,Puzzle
 39306,Fighting
 39312,Shooter
-39314,Fighting
+39314,Fighting/Puzzle
 39315,Fighting
 39316,Puzzle
 39317,Fighting/Sport
@@ -29629,7 +29657,7 @@
 39321,Shooter
 39322,Action
 39323,Simulator
-39324,Action
+39324,Action/Science fiction/Shooter
 39325,Sport
 39326,Platform
 39327,Sport
@@ -29670,6 +29698,7 @@
 39373,Action/Shooter
 39376,Sport
 39377,Shooter
+39379,Action/Platform
 39380,Platform
 39383,Action/Fighting
 39384,Platform
@@ -29882,7 +29911,7 @@
 39636,Shooter
 39637,Action/Role-playing (RPG)
 39638,Puzzle
-39640,Platform
+39640,Action/Platform
 39641,Strategy
 39643,Puzzle
 39644,Platform
@@ -29971,7 +30000,7 @@
 39754,Fantasy/Role-playing (RPG)
 39755,Simulator
 39756,Action
-39758,Action
+39758,Action/Strategy
 39759,Puzzle
 39760,Action/Shooter
 39761,Action/Shooter
@@ -30044,7 +30073,6 @@
 39845,Fighting/Sport
 39846,Sport
 39847,Puzzle
-39848,Fighting
 39851,Action/Fighting
 39852,Shooter
 39853,Action/Fighting
@@ -30159,8 +30187,6 @@
 39977,Action/Shooter
 39979,Sport
 39980,Puzzle
-39981,Fighting
-39982,Fighting
 39983,Puzzle
 39984,Puzzle
 39986,Action
@@ -30600,7 +30626,7 @@
 40572,Racing
 40573,Shooter
 40574,Sport
-40577,Shooter/Simulator
+40577,Action/Science fiction/Shooter/Simulator
 40579,Action/Shooter
 40582,Sport
 40583,Shooter
@@ -30702,6 +30728,7 @@
 40715,Shooter
 40721,Shooter
 40722,Shooter
+40723,Simulator
 40724,Shooter
 40725,Strategy
 40726,Shooter
@@ -30827,10 +30854,10 @@
 40912,Shooter
 40913,Action
 40914,Platform
-40915,Shooter
+40915,Science fiction/Shooter
 40916,Fighting
 40917,Action
-40918,Shooter
+40918,Science fiction/Shooter
 40919,Action
 40920,Action
 40921,Platform
@@ -30851,7 +30878,7 @@
 40939,Sport
 40940,Action/Puzzle
 40941,Action
-40942,Action
+40942,Action/Fantasy
 40943,Action/Shooter
 40944,Action/Platform/Puzzle
 40945,Shooter
@@ -30907,7 +30934,7 @@
 41007,Fighting
 41008,Action
 41009,Action
-41010,Action
+41010,Action/Fighting/Shooter/Racing
 41012,Sport
 41013,Sport
 41015,Sport
@@ -30966,7 +30993,7 @@
 41078,Shooter
 41079,Platform
 41080,Sport
-41082,Platform
+41082,Action/Fantasy/Platform
 41083,Shooter
 41084,Fighting
 41085,Fighting
@@ -31232,7 +31259,7 @@
 41408,Action
 41409,Fighting
 41419,Puzzle
-41420,Action
+41420,Action/Platform/Puzzle
 41424,Action
 41425,Sport
 41426,Role-playing (RPG)
@@ -31294,6 +31321,7 @@
 41525,Strategy
 41527,Platform
 41529,Shooter
+41530,Simulator
 41532,Sport
 41533,Shooter
 41534,Puzzle
@@ -31383,7 +31411,7 @@
 41650,Action
 41651,Action
 41652,Shooter
-41653,Shooter
+41653,Action/Science fiction/Shooter
 41654,Role-playing (RPG)
 41655,Sport
 41656,Sport
@@ -32542,7 +32570,7 @@
 43088,Action/Strategy
 43089,Action/Role-playing (RPG)
 43093,Action/Simulator
-43094,Action
+43094,Action/Shooter/Role-playing (RPG)
 43097,Role-playing (RPG)/Simulator
 43098,Action
 43099,Action
@@ -32577,7 +32605,7 @@
 43135,Action
 43136,Simulator
 43137,Action
-43138,Strategy
+43138,Action/Strategy
 43139,Action
 43141,Simulator
 43142,Action/Role-playing (RPG)/Simulator
@@ -32668,6 +32696,7 @@
 43277,Horror
 43278,Simulator
 43279,Action
+43280,Racing
 43282,Fighting
 43283,Shooter/Strategy
 43284,Role-playing (RPG)
@@ -34244,6 +34273,7 @@
 45357,Shooter
 45358,Racing
 45359,Platform
+45361,Science fiction/Platform
 45362,Shooter/Platform
 45363,Action/Platform
 45368,Action/Shooter
@@ -34429,8 +34459,8 @@
 45646,Strategy
 45647,Puzzle/Racing/Sport
 45648,Action
-45649,Platform
-45650,Action
+45649,Action/Horror/Platform
+45650,Action/Shooter
 45651,Shooter
 45652,Shooter
 45653,Action
@@ -34438,20 +34468,20 @@
 45655,Sport
 45656,Strategy
 45657,Racing
-45658,Shooter
+45658,Action
 45659,Shooter
 45660,Platform
 45661,Platform
 45662,Action
-45663,Shooter
+45663,Action/Science fiction/Shooter
 45664,Action
 45665,Action
 45667,Sport
-45668,Strategy
+45668,Action/Fantasy
 45669,Action
 45670,Platform
 45671,Shooter
-45672,Shooter
+45672,Action/Shooter
 45673,Sport
 45674,Action
 45675,Shooter
@@ -34768,17 +34798,17 @@
 46093,Role-playing (RPG)
 46094,Action/Shooter
 46098,Racing
-46100,Platform
+46100,Action/Platform
 46101,Sport
 46102,Sport
 46103,Racing/Sport
-46104,Shooter
+46104,Action/Science fiction/Shooter
 46105,Sport
 46110,Action
 46111,Sport
 46112,Platform
 46113,Action
-46114,Shooter
+46114,Action/Science fiction/Shooter/Platform
 46116,Puzzle
 46117,Shooter
 46118,Puzzle
@@ -34788,7 +34818,7 @@
 46123,Action/Puzzle
 46124,Role-playing (RPG)
 46125,Action/Sport
-46126,Shooter
+46126,Action/Science fiction/Shooter
 46127,Action
 46128,Sport
 46130,Shooter
@@ -34802,7 +34832,7 @@
 46140,Fighting
 46141,Puzzle
 46142,Sport
-46143,Sport
+46143,Simulator/Sport
 46144,Sport
 46145,Sport
 46146,Role-playing (RPG)
@@ -35512,7 +35542,7 @@
 47096,Action/Strategy
 47098,Action
 47100,Action/Horror/Shooter/Role-playing (RPG)
-47101,Role-playing (RPG)
+47101,Fantasy/Role-playing (RPG)
 47102,Strategy
 47103,Fighting
 47104,Fighting
@@ -35575,7 +35605,7 @@
 47179,Shooter/Simulator
 47181,Shooter
 47182,Puzzle
-47183,Action
+47183,Action/Shooter/Simulator
 47184,Sport
 47185,Sport
 47186,Racing/Sport
@@ -35585,7 +35615,7 @@
 47190,Strategy
 47191,Action
 47192,Action
-47196,Sport
+47196,Action/Sport
 47198,Action
 47201,Shooter
 47202,Action/Shooter/Simulator
@@ -37106,7 +37136,7 @@
 49147,Sport
 49148,Sport
 49150,Role-playing (RPG)
-49152,Platform
+49152,Action/Platform/Puzzle
 49153,Platform
 49154,Action
 49155,Puzzle
@@ -37954,6 +37984,7 @@
 50130,Simulator
 50139,Action
 50141,Action/Shooter/Strategy
+50146,Role-playing (RPG)/Strategy
 50156,Puzzle
 50157,Puzzle/Sport/Strategy
 50158,Puzzle/Sport/Strategy
@@ -38886,6 +38917,7 @@
 51528,Puzzle
 51529,Science fiction/Thriller
 51535,Fantasy/Role-playing (RPG)/Simulator
+51539,Sport
 51540,Sport
 51541,Racing
 51543,Action/Fantasy/Role-playing (RPG)
@@ -38909,7 +38941,7 @@
 51571,Simulator/Strategy
 51573,Action/Sport
 51574,Action/Strategy
-51575,Racing
+51575,Action/Racing
 51576,Role-playing (RPG)/Strategy
 51577,Simulator/Strategy
 51578,Action
@@ -39002,7 +39034,7 @@
 51983,Action
 51985,Sport/Strategy
 51986,Action/Simulator
-51991,Role-playing (RPG)
+51991,Role-playing (RPG)/Simulator
 51993,Action
 51997,Fantasy/Strategy
 51998,Simulator/Strategy
@@ -39027,6 +39059,7 @@
 52026,Simulator
 52027,Action/Simulator/Strategy
 52028,Role-playing (RPG)/Simulator
+52029,Action/Sport
 52030,Action/Fantasy/Shooter/Role-playing (RPG)
 52043,Action/Shooter
 52044,Fantasy/Real Time Strategy (RTS)
@@ -39083,6 +39116,7 @@
 52203,Science fiction/Shooter
 52204,Fantasy
 52205,Science fiction
+52207,Action
 52249,Action
 52250,Action
 52251,Action/Simulator
@@ -39148,7 +39182,7 @@
 52775,Action/Strategy
 52776,Action
 52777,Action
-52779,Simulator/Strategy
+52779,Action/Simulator/Strategy
 52786,Action/Real Time Strategy (RTS)/Strategy
 52881,Puzzle
 53091,Action/Simulator
@@ -39180,19 +39214,81 @@
 53387,Fantasy/Role-playing (RPG)
 53655,Simulator
 53656,Action
+53692,Action
 53790,Action/Shooter
 53924,Fantasy/Platform
 53926,Turn-based strategy (TBS)
 53929,Role-playing (RPG)
+53955,Fantasy/Strategy
 54112,Fantasy/Turn-based strategy (TBS)
 54219,Fantasy/Role-playing (RPG)
 54220,Fantasy/Role-playing (RPG)
 54315,Simulator
-54454,Fantasy/Horror/Shooter
+54331,Role-playing (RPG)
+54332,Simulator
+54334,Action
+54335,Action
+54336,Role-playing (RPG)/Simulator/Sport/Strategy
+54337,Action/Racing/Simulator
+54338,Action/Role-playing (RPG)
+54339,Action
+54340,Action/Science fiction/Horror/Shooter
+54342,Simulator/Strategy
+54443,Simulator
+54445,Role-playing (RPG)
+54446,Action
+54447,Sport
+54449,Strategy
+54450,Role-playing (RPG)/Strategy
+54453,Action/Role-playing (RPG)/Simulator
+54454,Action/Fantasy/Horror/Shooter
+54455,Action
+54456,Simulator
+54457,Action
+54458,Action
+54459,Action/Simulator/Sport
+54463,Strategy
+54464,Action
+54465,Strategy
+54467,Action
+54469,Role-playing (RPG)/Simulator
+54470,Action/Strategy
+54471,Action
+54476,Action
+54479,Simulator
+54481,Simulator/Strategy
+54488,Simulator/Strategy
+54489,Action
+54490,Action
+54491,Action
+54493,Action/Simulator/Strategy
+54494,Action
+54495,Strategy
+54496,Action
+54497,Simulator
+54498,Sport
+54499,Simulator/Strategy
+54500,Action
+54501,Action
+54502,Action
+54505,Racing/Sport
+54506,Simulator/Strategy
+54507,Action
+54508,Action
+54509,Action
+54510,Action/Role-playing (RPG)/Simulator
+54511,Action
+54513,Action
+54514,Simulator/Strategy
 54516,Turn-based strategy (TBS)
 54517,Turn-based strategy (TBS)
 54518,Turn-based strategy (TBS)
 54519,Science fiction/Shooter/Simulator
+54522,Action/Role-playing (RPG)
+54523,Action
+54524,Simulator
+54525,Simulator
+54526,Role-playing (RPG)
 54529,Puzzle
 54534,Music/Simulator
 54535,Action/Science fiction/Shooter/Platform
@@ -39210,6 +39306,7 @@
 54554,Action/Science fiction/Shooter
 54556,Sport
 54558,Action/Fighting
+54559,Action/Shooter
 54561,Fantasy/Role-playing (RPG)
 54562,Fantasy/Role-playing (RPG)
 54563,Fantasy/Role-playing (RPG)
@@ -39223,11 +39320,13 @@
 54571,Action/Platform/Puzzle
 54572,Fantasy/Turn-based strategy (TBS)
 54573,Action/Fighting
+54574,Simulator
 54575,Action/Science fiction/Shooter
 54576,Action/Science fiction/Shooter
 54577,Action/Science fiction/Shooter
 54578,Action/Platform
 54579,Action/Platform
+54580,Action
 54581,Action/Shooter/Simulator
 54591,Action/Shooter/Platform
 54592,Fantasy/Platform
@@ -39240,12 +39339,15 @@
 54600,Action/Science fiction/Shooter/Platform
 54601,Science fiction
 54602,Puzzle
+54613,Simulator
 54624,Action/Science fiction/Shooter/Racing
 54625,Simulator
 54626,Action/Science fiction/Shooter
 54627,Action/Shooter
 54628,Action
 54629,Thriller
+54631,Simulator
+54634,Simulator
 54635,Fantasy
 54637,Action/Shooter
 54638,Science fiction/Horror/Shooter
@@ -39268,6 +39370,7 @@
 54658,Action/Science fiction/Shooter
 54659,Science fiction/Role-playing (RPG)
 54660,Action/Survival/Shooter
+54662,Simulator/Sport
 54663,Point-and-click/Puzzle/Racing
 54664,Action/Shooter
 54665,Science fiction/Platform
@@ -39281,6 +39384,10 @@
 54673,Puzzle/Strategy
 54674,Action
 54675,Role-playing (RPG)
+54676,Science fiction/Simulator
+54677,Point-and-click/Puzzle
+54678,Puzzle
+54681,Action/Fantasy/Shooter/Role-playing (RPG)
 54697,Action/Shooter
 54698,Shooter
 54699,Horror/Thriller
@@ -39301,3 +39408,177 @@
 54722,Action/Shooter
 54723,Strategy
 54724,Platform/Puzzle
+54725,Science fiction/Strategy
+54729,Action/Puzzle
+54759,Action
+54768,Simulator
+54775,Action/Role-playing (RPG)
+54776,Racing
+54777,Action
+54778,Action/Fantasy/Role-playing (RPG)/Strategy
+54779,Action/Puzzle
+54785,Action
+54786,Racing
+54787,Action/Science fiction/Platform/Role-playing (RPG)
+54788,Music
+54789,Racing/Simulator
+54790,Racing
+54792,Science fiction
+54793,Action/Science fiction/Role-playing (RPG)/Strategy
+54794,Simulator
+54795,Puzzle
+54796,Simulator
+54797,Simulator
+54798,Action/Simulator/Strategy
+54799,Action
+54801,Action/Sport
+54802,Strategy
+54803,Action/Role-playing (RPG)/Strategy
+54805,Simulator/Strategy
+54806,Role-playing (RPG)
+54808,Action
+54812,Simulator/Sport
+54813,Action/Simulator/Strategy
+54814,Action
+54815,Action/Role-playing (RPG)/Simulator/Strategy
+54816,Action/Role-playing (RPG)/Strategy
+54817,Action/Strategy
+54818,Simulator/Sport/Strategy
+54819,Action
+54820,Role-playing (RPG)/Simulator/Strategy
+54821,Role-playing (RPG)
+54822,Action
+54823,Action/Strategy
+54824,Role-playing (RPG)
+54826,Action
+54827,Action/Role-playing (RPG)
+54828,Strategy
+54829,Action/Role-playing (RPG)
+54830,Strategy
+54832,Action
+54833,Action/Role-playing (RPG)
+54834,Action/Sport
+54835,Simulator/Strategy
+54837,Action
+54838,Action
+54841,Action/Simulator
+54842,Action/Science fiction/Role-playing (RPG)
+54843,Puzzle
+54844,Science fiction/Shooter
+54846,Action
+54847,Action
+54848,Action
+54849,Action
+54850,Action/Role-playing (RPG)
+54857,Action
+54860,Role-playing (RPG)/Strategy
+54862,Simulator
+54863,Action
+54868,Simulator/Strategy
+54869,Role-playing (RPG)
+54870,Strategy
+54871,Strategy
+54873,Role-playing (RPG)
+54874,Simulator/Strategy
+54875,Racing
+54876,Sport
+54884,Action
+54885,Action
+54889,Action/Role-playing (RPG)
+54995,Action/Platform
+55014,Action/Science fiction/Shooter
+55015,Action/Science fiction/Shooter
+55016,Action/Science fiction
+55017,Action/Science fiction/Puzzle
+55018,Action/Platform
+55019,Action/Science fiction/Shooter
+55021,Action/Science fiction/Shooter
+55022,Action/Science fiction/Shooter
+55023,Action/Music/Puzzle
+55025,Action/Science fiction/Survival/Shooter/Platform/Puzzle
+55026,Action
+55027,Action/Science fiction/Horror
+55028,Action
+55029,Real Time Strategy (RTS)
+55030,Action/Science fiction/Shooter/Platform
+55031,Strategy
+55032,Action/Fighting
+55033,Point-and-click
+55034,Action/Fantasy/Role-playing (RPG)
+55035,Action/Fantasy/Role-playing (RPG)
+55036,Strategy
+55037,Fighting
+55038,Action/Fantasy/Science fiction/Shooter/Role-playing (RPG)
+55039,Action/Fantasy/Shooter
+55040,Action/Fantasy/Science fiction/Fighting
+55041,Action
+55043,Action/Shooter
+55044,Fantasy/Role-playing (RPG)
+55045,Action/Science fiction
+55046,Action/Fighting
+55048,Puzzle
+55050,Role-playing (RPG)
+55052,Sport
+55053,Science fiction/Simulator/Sport
+55054,Action/Science fiction/Shooter/Racing
+55055,Action/Science fiction/Fighting
+55056,Real Time Strategy (RTS)
+55057,Real Time Strategy (RTS)
+55058,Fighting
+55059,Fighting/Puzzle
+55061,Fighting
+55064,Puzzle
+55065,Fighting
+55078,Action
+55081,Fantasy/Role-playing (RPG)
+55082,Horror/Survival/Platform/Puzzle
+55083,Action
+55084,Science fiction
+55085,Action/Science fiction/Shooter
+55086,Action/Science fiction/Shooter
+55087,Puzzle
+55088,Action/Racing
+55090,Action/Role-playing (RPG)
+55091,Puzzle
+55092,Action/Fantasy/Role-playing (RPG)
+55093,Action/Science fiction/Puzzle/Simulator
+55094,Action/Fantasy
+55095,Action
+55096,Action/Science fiction/Shooter
+55097,Action/Shooter
+55098,Action/Science fiction/Shooter
+55099,Science fiction/Shooter/Platform
+55100,Action/Science fiction/Shooter
+55101,Action/Survival/Platform/Role-playing (RPG)/Strategy
+55102,Puzzle
+55103,Sport
+55104,Sport
+55105,Simulator
+55106,Fantasy/Simulator/Strategy
+55109,Science fiction/Simulator/Strategy
+55111,Role-playing (RPG)
+55112,Action/Fantasy
+55114,Fantasy
+55115,Action
+55119,Real Time Strategy (RTS)
+55120,Strategy
+55122,Fantasy/Role-playing (RPG)/Simulator
+55124,Science fiction/Survival/Shooter/Puzzle/Simulator/Sport
+55125,Action/Fighting
+55134,Shooter
+55135,Shooter
+55136,Puzzle
+55148,Science fiction
+55149,Role-playing (RPG)
+55150,Action/Science fiction/Shooter
+55151,Action/Shooter/Strategy
+55152,Action/Sport
+55153,Action/Sport
+55154,Simulator/Sport
+55155,Science fiction/Role-playing (RPG)
+55165,Action/Science fiction/Shooter
+55166,Platform
+55169,Racing
+55176,Action
+55177,Action/Horror/Simulator
+55178,Simulator/Strategy

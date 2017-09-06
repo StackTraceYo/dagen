@@ -11494,7 +11494,6 @@
 35995,Action
 35927,Action
 35960,Action
-36035,Action
 36029,Action
 35928,Action
 35955,Action
@@ -16905,6 +16904,205 @@
 54721,Action
 54722,Action
 52083,Action
+7794,Action
+54729,Action
+54559,Action
+54681,Action
+54779,Action
+40577,Action
+46104,Action
+46114,Action
+54777,Action
+54775,Action
+54476,Action
+54471,Action
+54470,Action
+54467,Action
+54464,Action
+54458,Action
+54457,Action
+36999,Action
+54455,Action
+54454,Action
+54453,Action
+52779,Action
+54446,Action
+54337,Action
+54338,Action
+54339,Action
+54459,Action
+54340,Action
+54334,Action
+54335,Action
+54500,Action
+54501,Action
+54502,Action
+54787,Action
+43138,Action
+36515,Action
+54510,Action
+54509,Action
+54511,Action
+54508,Action
+54507,Action
+39127,Action
+28748,Action
+32617,Action
+33463,Action
+54494,Action
+54493,Action
+54523,Action
+54522,Action
+54496,Action
+54513,Action
+54491,Action
+54490,Action
+54489,Action
+15491,Action
+54842,Action
+54846,Action
+51575,Action
+52207,Action
+52029,Action
+24090,Action
+54995,Action
+11905,Action
+12612,Action
+55015,Action
+55014,Action
+55017,Action
+55016,Action
+55019,Action
+55018,Action
+39115,Action
+55023,Action
+55022,Action
+12235,Action
+55021,Action
+1480,Action
+55026,Action
+55027,Action
+55025,Action
+54759,Action
+54884,Action
+54885,Action
+54793,Action
+54848,Action
+54889,Action
+54863,Action
+54857,Action
+54847,Action
+54849,Action
+54850,Action
+54829,Action
+36780,Action
+27692,Action
+54826,Action
+54816,Action
+54815,Action
+54814,Action
+27042,Action
+54813,Action
+54827,Action
+54841,Action
+54838,Action
+55030,Action
+54837,Action
+54834,Action
+54833,Action
+15216,Action
+55032,Action
+54808,Action
+19448,Action
+54823,Action
+36663,Action
+55028,Action
+6930,Action
+54580,Action
+53692,Action
+24469,Action
+54819,Action
+55034,Action
+54798,Action
+55040,Action
+54778,Action
+22359,Action
+54801,Action
+55041,Action
+20040,Action
+12864,Action
+12866,Action
+14728,Action
+11200,Action
+54822,Action
+54817,Action
+54832,Action
+55035,Action
+55038,Action
+55039,Action
+54799,Action
+54803,Action
+55043,Action
+4624,Action
+45672,Action
+55046,Action
+39379,Action
+13425,Action
+55045,Action
+55055,Action
+55054,Action
+12550,Action
+46100,Action
+45649,Action
+37310,Action
+2741,Action
+31304,Action
+35315,Action
+12455,Action
+55083,Action
+55086,Action
+55085,Action
+55088,Action
+41082,Action
+39640,Action
+55090,Action
+17946,Action
+47196,Action
+45663,Action
+55092,Action
+55093,Action
+55094,Action
+55095,Action
+55096,Action
+55097,Action
+12862,Action
+55100,Action
+55098,Action
+55078,Action
+7503,Action
+55112,Action
+9247,Action
+55125,Action
+55101,Action
+28831,Action
+55115,Action
+55150,Action
+55151,Action
+41653,Action
+49152,Action
+45668,Action
+45658,Action
+6096,Action
+46126,Action
+9155,Action
+55153,Action
+55152,Action
+55165,Action
+37143,Action
+55176,Action
+55177,Action
+54785,Action
+27314,Action
 799,Fantasy
 651,Fantasy
 901,Fantasy
@@ -20181,6 +20379,36 @@
 54718,Fantasy
 30119,Fantasy
 6961,Fantasy
+29578,Fantasy
+54681,Fantasy
+54778,Fantasy
+36515,Fantasy
+3663,Fantasy
+40942,Fantasy
+55034,Fantasy
+55040,Fantasy
+12864,Fantasy
+12866,Fantasy
+55035,Fantasy
+55038,Fantasy
+55039,Fantasy
+30360,Fantasy
+55044,Fantasy
+47101,Fantasy
+15248,Fantasy
+55081,Fantasy
+41082,Fantasy
+55092,Fantasy
+35059,Fantasy
+55094,Fantasy
+55106,Fantasy
+55114,Fantasy
+55112,Fantasy
+55122,Fantasy
+53955,Fantasy
+13838,Fantasy
+45668,Fantasy
+11883,Fantasy
 881,Science fiction
 782,Science fiction
 787,Science fiction
@@ -23393,6 +23621,62 @@
 54719,Science fiction
 54717,Science fiction
 54721,Science fiction
+54725,Science fiction
+40915,Science fiction
+54676,Science fiction
+40577,Science fiction
+46104,Science fiction
+18141,Science fiction
+46114,Science fiction
+54787,Science fiction
+36515,Science fiction
+54793,Science fiction
+54792,Science fiction
+54844,Science fiction
+55015,Science fiction
+55014,Science fiction
+55017,Science fiction
+55016,Science fiction
+55019,Science fiction
+55022,Science fiction
+55021,Science fiction
+1480,Science fiction
+55027,Science fiction
+55025,Science fiction
+54842,Science fiction
+55030,Science fiction
+55040,Science fiction
+12866,Science fiction
+55038,Science fiction
+55045,Science fiction
+55055,Science fiction
+55054,Science fiction
+55053,Science fiction
+37310,Science fiction
+45361,Science fiction
+55084,Science fiction
+55086,Science fiction
+55085,Science fiction
+45663,Science fiction
+54340,Science fiction
+55093,Science fiction
+55096,Science fiction
+39324,Science fiction
+55100,Science fiction
+55099,Science fiction
+55098,Science fiction
+55109,Science fiction
+30131,Science fiction
+33731,Science fiction
+55124,Science fiction
+55150,Science fiction
+55148,Science fiction
+41653,Science fiction
+46126,Science fiction
+4498,Science fiction
+55155,Science fiction
+40918,Science fiction
+55165,Science fiction
 967,Horror
 973,Horror
 971,Horror
@@ -24470,6 +24754,14 @@
 54454,Horror
 54699,Horror
 54716,Horror
+17032,Horror
+55027,Horror
+45649,Horror
+55082,Horror
+54340,Horror
+14079,Horror
+33454,Horror
+55177,Horror
 18,Thriller
 19,Thriller
 21,Thriller
@@ -24742,6 +25034,7 @@
 54629,Thriller
 54699,Thriller
 15491,Thriller
+13529,Thriller
 967,Survival
 973,Survival
 971,Survival
@@ -25402,6 +25695,11 @@
 36781,Survival
 54660,Survival
 54721,Survival
+17032,Survival
+55025,Survival
+55082,Survival
+55101,Survival
+55124,Survival
 31,Point-and-click
 32,Point-and-click
 33,Point-and-click
@@ -26084,6 +26382,9 @@
 54597,Point-and-click
 54663,Point-and-click
 54671,Point-and-click
+54677,Point-and-click
+27531,Point-and-click
+55033,Point-and-click
 119,Fighting
 359,Fighting
 360,Fighting
@@ -27255,7 +27556,6 @@
 40263,Fighting
 39791,Fighting
 37295,Fighting
-39848,Fighting
 39804,Fighting
 39802,Fighting
 5295,Fighting
@@ -27447,7 +27747,6 @@
 19486,Fighting
 41084,Fighting
 41085,Fighting
-39981,Fighting
 40233,Fighting
 40519,Fighting
 39903,Fighting
@@ -27468,7 +27767,6 @@
 39876,Fighting
 39864,Fighting
 39993,Fighting
-39982,Fighting
 40036,Fighting
 40075,Fighting
 40800,Fighting
@@ -28041,6 +28339,20 @@
 13509,Fighting
 8059,Fighting
 21033,Fighting
+28177,Fighting
+22221,Fighting
+55037,Fighting
+55032,Fighting
+55040,Fighting
+55046,Fighting
+55055,Fighting
+41010,Fighting
+55065,Fighting
+55061,Fighting
+55059,Fighting
+55058,Fighting
+5486,Fighting
+55125,Fighting
 1,Shooter
 2,Shooter
 3,Shooter
@@ -32888,7 +33200,6 @@
 45672,Shooter
 51411,Shooter
 6687,Shooter
-45658,Shooter
 45659,Shooter
 45663,Shooter
 45651,Shooter
@@ -33180,6 +33491,51 @@
 30119,Shooter
 52276,Shooter
 54722,Shooter
+54559,Shooter
+54681,Shooter
+39127,Shooter
+45650,Shooter
+54844,Shooter
+55015,Shooter
+55014,Shooter
+55019,Shooter
+55022,Shooter
+55021,Shooter
+55025,Shooter
+55030,Shooter
+55038,Shooter
+55039,Shooter
+55043,Shooter
+30150,Shooter
+55054,Shooter
+41010,Shooter
+43094,Shooter
+55086,Shooter
+12862,Shooter
+55085,Shooter
+35059,Shooter
+31457,Shooter
+13567,Shooter
+54340,Shooter
+5486,Shooter
+55096,Shooter
+55097,Shooter
+55100,Shooter
+39324,Shooter
+55099,Shooter
+55098,Shooter
+30131,Shooter
+28751,Shooter
+33731,Shooter
+55135,Shooter
+55134,Shooter
+55124,Shooter
+55150,Shooter
+55151,Shooter
+47183,Shooter
+55165,Shooter
+37143,Shooter
+33454,Shooter
 1285,Music
 2141,Music
 2215,Music
@@ -33736,6 +34092,8 @@
 44491,Music
 44385,Music
 54534,Music
+54788,Music
+55023,Music
 358,Platform
 360,Platform
 452,Platform
@@ -34022,7 +34380,6 @@
 2745,Platform
 2722,Platform
 2728,Platform
-2735,Platform
 2734,Platform
 2778,Platform
 2760,Platform
@@ -37032,6 +37389,23 @@
 54665,Platform
 54648,Platform
 54724,Platform
+46114,Platform
+54787,Platform
+41420,Platform
+54995,Platform
+55018,Platform
+55025,Platform
+55030,Platform
+39379,Platform
+19598,Platform
+55082,Platform
+45361,Platform
+55101,Platform
+14079,Platform
+55099,Platform
+6096,Platform
+9540,Platform
+55166,Platform
 48,Puzzle
 60,Puzzle
 61,Puzzle
@@ -40248,6 +40622,34 @@
 54720,Puzzle
 54724,Puzzle
 52083,Puzzle
+54729,Puzzle
+54678,Puzzle
+54677,Puzzle
+54779,Puzzle
+41420,Puzzle
+54795,Puzzle
+54843,Puzzle
+55017,Puzzle
+55023,Puzzle
+55025,Puzzle
+15216,Puzzle
+23483,Puzzle
+28124,Puzzle
+55048,Puzzle
+19598,Puzzle
+55064,Puzzle
+55059,Puzzle
+39314,Puzzle
+55087,Puzzle
+55082,Puzzle
+55091,Puzzle
+55093,Puzzle
+55102,Puzzle
+341,Puzzle
+55136,Puzzle
+55124,Puzzle
+36816,Puzzle
+49152,Puzzle
 143,Racing
 154,Racing
 177,Racing
@@ -42784,6 +43186,19 @@
 52715,Racing
 54663,Racing
 54670,Racing
+54776,Racing
+54337,Racing
+54786,Racing
+54789,Racing
+54505,Racing
+54790,Racing
+11905,Racing
+54875,Racing
+55054,Racing
+41010,Racing
+55088,Racing
+43280,Racing
+55169,Racing
 34,Real Time Strategy (RTS)
 35,Real Time Strategy (RTS)
 36,Real Time Strategy (RTS)
@@ -43475,6 +43890,10 @@
 52521,Real Time Strategy (RTS)
 54598,Real Time Strategy (RTS)
 19939,Real Time Strategy (RTS)
+55029,Real Time Strategy (RTS)
+55056,Real Time Strategy (RTS)
+55057,Real Time Strategy (RTS)
+55119,Real Time Strategy (RTS)
 7,Role-playing (RPG)
 11,Role-playing (RPG)
 5,Role-playing (RPG)
@@ -49256,7 +49675,6 @@
 9971,Role-playing (RPG)
 1921,Role-playing (RPG)
 26714,Role-playing (RPG)
-36035,Role-playing (RPG)
 50588,Role-playing (RPG)
 51213,Role-playing (RPG)
 9319,Role-playing (RPG)
@@ -49643,6 +50061,60 @@
 13011,Role-playing (RPG)
 54712,Role-playing (RPG)
 54715,Role-playing (RPG)
+54681,Role-playing (RPG)
+54775,Role-playing (RPG)
+54469,Role-playing (RPG)
+54453,Role-playing (RPG)
+54450,Role-playing (RPG)
+54445,Role-playing (RPG)
+54338,Role-playing (RPG)
+54331,Role-playing (RPG)
+54336,Role-playing (RPG)
+54787,Role-playing (RPG)
+36515,Role-playing (RPG)
+54510,Role-playing (RPG)
+54526,Role-playing (RPG)
+54793,Role-playing (RPG)
+54522,Role-playing (RPG)
+43094,Role-playing (RPG)
+15491,Role-playing (RPG)
+54842,Role-playing (RPG)
+50146,Role-playing (RPG)
+36869,Role-playing (RPG)
+54889,Role-playing (RPG)
+54869,Role-playing (RPG)
+54850,Role-playing (RPG)
+54827,Role-playing (RPG)
+54860,Role-playing (RPG)
+54873,Role-playing (RPG)
+54829,Role-playing (RPG)
+54816,Role-playing (RPG)
+54815,Role-playing (RPG)
+54833,Role-playing (RPG)
+15823,Role-playing (RPG)
+19567,Role-playing (RPG)
+54806,Role-playing (RPG)
+24469,Role-playing (RPG)
+54821,Role-playing (RPG)
+54824,Role-playing (RPG)
+54820,Role-playing (RPG)
+55034,Role-playing (RPG)
+55035,Role-playing (RPG)
+55038,Role-playing (RPG)
+54778,Role-playing (RPG)
+22359,Role-playing (RPG)
+54803,Role-playing (RPG)
+55044,Role-playing (RPG)
+55050,Role-playing (RPG)
+55081,Role-playing (RPG)
+55090,Role-playing (RPG)
+55092,Role-playing (RPG)
+55101,Role-playing (RPG)
+341,Role-playing (RPG)
+55111,Role-playing (RPG)
+55122,Role-playing (RPG)
+55149,Role-playing (RPG)
+55155,Role-playing (RPG)
 27,Simulator
 208,Simulator
 204,Simulator
@@ -50296,9 +50768,7 @@
 5450,Simulator
 5457,Simulator
 5467,Simulator
-5468,Simulator
 5476,Simulator
-5486,Simulator
 5488,Simulator
 5494,Simulator
 5493,Simulator
@@ -54494,6 +54964,74 @@
 26666,Simulator
 54710,Simulator
 54714,Simulator
+54676,Simulator
+46143,Simulator
+36600,Simulator
+54481,Simulator
+54479,Simulator
+37010,Simulator
+54469,Simulator
+54456,Simulator
+54453,Simulator
+54443,Simulator
+54337,Simulator
+54459,Simulator
+54342,Simulator
+54332,Simulator
+54336,Simulator
+54488,Simulator
+51991,Simulator
+29098,Simulator
+54510,Simulator
+54506,Simulator
+54525,Simulator
+54524,Simulator
+54514,Simulator
+54493,Simulator
+54789,Simulator
+40723,Simulator
+41530,Simulator
+54499,Simulator
+54497,Simulator
+54794,Simulator
+54797,Simulator
+54796,Simulator
+54631,Simulator
+54574,Simulator
+39115,Simulator
+54613,Simulator
+54862,Simulator
+54868,Simulator
+54818,Simulator
+54798,Simulator
+54874,Simulator
+8733,Simulator
+54815,Simulator
+54813,Simulator
+54841,Simulator
+54835,Simulator
+12093,Simulator
+54634,Simulator
+54812,Simulator
+54805,Simulator
+54820,Simulator
+54662,Simulator
+55053,Simulator
+7140,Simulator
+55093,Simulator
+55106,Simulator
+55105,Simulator
+55109,Simulator
+54768,Simulator
+36614,Simulator
+55122,Simulator
+9247,Simulator
+55124,Simulator
+47183,Simulator
+55154,Simulator
+23248,Simulator
+55177,Simulator
+55178,Simulator
 176,Sport
 264,Sport
 261,Sport
@@ -56584,7 +57122,6 @@
 35814,Sport
 35985,Sport
 36013,Sport
-36035,Sport
 35821,Sport
 35830,Sport
 36171,Sport
@@ -58099,7 +58636,6 @@
 48763,Sport
 48769,Sport
 23104,Sport
-4624,Sport
 49286,Sport
 48146,Sport
 48152,Sport
@@ -59039,6 +59575,29 @@
 13987,Sport
 13479,Sport
 14085,Sport
+51539,Sport
+54447,Sport
+54459,Sport
+54336,Sport
+54505,Sport
+54498,Sport
+52029,Sport
+54818,Sport
+54876,Sport
+54834,Sport
+54812,Sport
+34978,Sport
+54801,Sport
+54662,Sport
+55053,Sport
+55052,Sport
+7140,Sport
+55104,Sport
+55103,Sport
+55124,Sport
+55154,Sport
+55153,Sport
+55152,Sport
 67,Strategy
 6,Strategy
 205,Strategy
@@ -61341,7 +61900,6 @@
 10298,Strategy
 9634,Strategy
 1881,Strategy
-3100,Strategy
 8965,Strategy
 9683,Strategy
 9280,Strategy
@@ -62235,7 +62793,6 @@
 32413,Strategy
 32410,Strategy
 32604,Strategy
-19786,Strategy
 33130,Strategy
 32607,Strategy
 32446,Strategy
@@ -62876,7 +63433,6 @@
 35961,Strategy
 35982,Strategy
 35971,Strategy
-36035,Strategy
 36019,Strategy
 35749,Strategy
 35793,Strategy
@@ -64529,7 +65085,6 @@
 45777,Strategy
 46523,Strategy
 46154,Strategy
-45668,Strategy
 45656,Strategy
 45646,Strategy
 46072,Strategy
@@ -64754,6 +65309,63 @@
 54713,Strategy
 54723,Strategy
 54721,Strategy
+54725,Strategy
+54481,Strategy
+54470,Strategy
+54465,Strategy
+54463,Strategy
+36999,Strategy
+54450,Strategy
+54449,Strategy
+54342,Strategy
+54336,Strategy
+54488,Strategy
+54506,Strategy
+54514,Strategy
+54495,Strategy
+54493,Strategy
+33588,Strategy
+54499,Strategy
+50146,Strategy
+921,Strategy
+54868,Strategy
+54818,Strategy
+54798,Strategy
+54860,Strategy
+54874,Strategy
+54802,Strategy
+54793,Strategy
+54871,Strategy
+54870,Strategy
+54828,Strategy
+54816,Strategy
+54815,Strategy
+54813,Strategy
+54835,Strategy
+54830,Strategy
+55031,Strategy
+27694,Strategy
+25229,Strategy
+54823,Strategy
+54805,Strategy
+54820,Strategy
+54817,Strategy
+55036,Strategy
+54778,Strategy
+54803,Strategy
+31304,Strategy
+5486,Strategy
+55101,Strategy
+55106,Strategy
+55109,Strategy
+36614,Strategy
+39758,Strategy
+55120,Strategy
+7098,Strategy
+55151,Strategy
+53955,Strategy
+23248,Strategy
+55178,Strategy
 8,Turn-based strategy (TBS)
 9,Turn-based strategy (TBS)
 13,Turn-based strategy (TBS)
@@ -64920,7 +65532,6 @@
 8765,Turn-based strategy (TBS)
 9379,Turn-based strategy (TBS)
 6038,Turn-based strategy (TBS)
-3100,Turn-based strategy (TBS)
 7719,Turn-based strategy (TBS)
 2004,Turn-based strategy (TBS)
 3530,Turn-based strategy (TBS)

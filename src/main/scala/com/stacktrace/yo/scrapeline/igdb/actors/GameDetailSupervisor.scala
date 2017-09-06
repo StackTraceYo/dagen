@@ -43,7 +43,7 @@ class GameDetailSupervisor(val idSet: Vector[String]) extends Delegator {
 
   lazy val tick: Cancellable = context.system.scheduler.schedule(0 millis, 10000 millis, self, SendNextRequests())
   lazy val writeTick: Cancellable = context.system.scheduler.schedule(15000 millis, 1000 millis, self, WriteNextObjects())
-  lazy val reportTick: Cancellable = context.system.scheduler.schedule(10000 millis, 10000 millis, self, Report())
+  lazy val reportTick: Cancellable = context.system.scheduler.schedule(0 millis, 10000 millis, self, Report())
 
   override def receive: Receive = {
     case StartDelegate(pipeline: ActorRef) =>
@@ -52,17 +52,17 @@ class GameDetailSupervisor(val idSet: Vector[String]) extends Delegator {
       writeTick
       reportTick
     case SendNextRequests() =>
-      if (numVisited < idSet.size) {
+      if (numVisited + inProcess < idSet.size) {
         var list = mutable.ListBuffer[String]()
-        for (i <- 1 to Math.min(idsLeftToWrite, 1000)) { //max thousand ids
+        for (i <- 1 to Math.min(idsLeftToWrite - inProcess, 1000)) { //max thousand ids
           list += toProcess.dequeue()
+          inProcess += 1
         }
         val reader = context.actorOf(Props(new GameDetailActor()))
         reader ! GetIds(list.mkString(","))
-        inProcess += 1
       }
     case msg@WriteContent(doc: util.List[Game]) => {
-      inProcess -= 1
+      inProcess -= doc.size()
       numVisited += doc.size()
       toWrite enqueue doc.toList
     }
@@ -89,6 +89,9 @@ class GameDetailSupervisor(val idSet: Vector[String]) extends Delegator {
       if (numWrote >= idSize) {
         log.info("Completed Game Detail Writing.. Closing")
         pipeline ! PipelineFinished()
+        tick.cancel()
+        reportTick.cancel()
+        writeTick.cancel()
         self ! PoisonPill
       }
     }

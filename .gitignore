@@ -2,3 +2,6 @@
 *.log
 .idea/
 scrakka.iml
+games/
+project/target/
+target/

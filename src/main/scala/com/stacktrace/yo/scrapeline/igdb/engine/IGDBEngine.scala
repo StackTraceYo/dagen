@@ -1,8 +1,8 @@
-package com.stacktrace.yo.scrapeline.core.engine
+package com.stacktrace.yo.scrapeline.igdb.engine
 
 import akka.actor.{Actor, ActorLogging, ActorRef, Cancellable, Props}
 import com.stacktrace.yo.scrapeline.core.Protocol._
-import com.stacktrace.yo.scrapeline.igdb.pipeline.{GameDetailPipeline, GameListPipeline}
+import com.stacktrace.yo.scrapeline.igdb.pipeline.{GameDetailExtractionPipeline, GameDetailPipeline, GameListPipeline}
 
 import scala.collection.mutable
 import scala.concurrent.ExecutionContext
@@ -12,7 +12,7 @@ import scala.language.postfixOps
 /**
   * Created by Ahmad on 8/23/2017.
   */
-class Engine(implicit executionContext: ExecutionContext) extends Actor with ActorLogging {
+class IGDBEngine(implicit executionContext: ExecutionContext) extends Actor with ActorLogging {
 
   var phasesRunning: mutable.ListBuffer[String] = mutable.ListBuffer[String]()
   var phasesCompleted: mutable.ListBuffer[String] = mutable.ListBuffer[String]()
@@ -36,18 +36,21 @@ class Engine(implicit executionContext: ExecutionContext) extends Actor with Act
     case NextPhase(fin: String) =>
       fin match {
         case "GameListPipeline" =>
-          val phase = context.actorOf(Props(new GameDetailPipeline()))
+          val phase = getPipeline("GameDetailPipeline")
           phase ! StartPhase()
-          phasesRunning += "GameDetailPipeline"
+          handle("GameDetailPipeline")
         case "GameDetailPipeline" =>
-        //          val phase = context.actorOf(Props(new GameDetailPipeline()))
+          val phase = getPipeline("GameDetailExtractionPipeline")
+          phase ! StartPhase()
+          handle("GameDetailExtractionPipeline")
+        case "GameDetailExtractionPipeline" =>
+        //          val phase = getPipeline("GameDetailExtractionPipeline")
         //          phase ! StartPhase()
-        //          phasesRunning += "GameDetailPipeline"
+        //          handle("GameDetailPipeline")
       }
-    case Report() => {
+    case Report() =>
       log.info("Currenly Running : {}", phasesRunning.mkString(","))
       log.info("Completed: {}", phasesCompleted.mkString(","))
-    }
   }
 
   private def handle(phase: String): Unit = {
@@ -59,6 +62,7 @@ class Engine(implicit executionContext: ExecutionContext) extends Actor with Act
       name match {
         case "GameListPipeline" => new GameListPipeline()
         case "GameDetailPipeline" => new GameDetailPipeline()
+        case "GameDetailExtractionPipeline" => new GameDetailExtractionPipeline()
         case _ => new GameListPipeline
       }
     ))

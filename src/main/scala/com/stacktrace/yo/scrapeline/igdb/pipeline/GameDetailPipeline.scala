@@ -22,6 +22,7 @@ class GameDetailPipeline extends PipelineActor {
   def client: IGDBClient = IGDBAPIClient.getClient
 
   var controller: ActorRef = _
+  var details: Vector[String] = _
 
 
   override def receive: PartialFunction[Any, Unit] = {
@@ -31,7 +32,7 @@ class GameDetailPipeline extends PipelineActor {
         self ! PipelineFinished()
       }
       else {
-        val supervisor = context.actorOf(Props(new GameDetailSupervisor(start())))
+        val supervisor = context.actorOf(Props(new GameDetailSupervisor(details)))
         supervisor ! StartDelegate(self)
       }
     case PipelineFinished() =>
@@ -46,6 +47,7 @@ class GameDetailPipeline extends PipelineActor {
     val file = new File("games/")
     val files = recursiveListFiles(file)
     var i = 0
+    val ids = scala.collection.mutable.HashSet[Long]()
     files.foreach(
       file => {
         val reader = new ObjectMapper()
@@ -53,10 +55,25 @@ class GameDetailPipeline extends PipelineActor {
           .registerModule(DefaultScalaModule)
           .readerFor(classOf[Array[Game]])
         val gameList: Array[Game] = reader.readValue[Array[Game]](file)
-        gameList.foreach(game => i += 1)
+        gameList.toList.foreach(game => {
+          ids += game.getId
+          i += 1
+        }
+        )
       }
     )
-    i >= start().size
+    val missing = scala.collection.mutable.ListBuffer[String]()
+    if (i != start().size) {
+      details.foreach(id => {
+        if (!ids.contains(id.toLong)) {
+          missing += id
+        }
+      })
+      details = missing.toVector
+      false
+    } else {
+      true
+    }
   }
 
   def recursiveListFiles(f: File): Array[File] = {
@@ -82,6 +99,7 @@ class GameDetailPipeline extends PipelineActor {
     else {
       log.info("Failed trying to create the directory")
     }
+    details = idList
     idList
   }
 }
