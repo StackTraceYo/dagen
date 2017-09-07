@@ -5,10 +5,10 @@ import java.io.File
 import akka.actor.{ActorRef, PoisonPill, Props}
 import com.fasterxml.jackson.databind.{DeserializationFeature, ObjectMapper}
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
-import com.stacktrace.yo.scrapeline.core.IGDBAPIClient
-import com.stacktrace.yo.scrapeline.core.Protocol._
-import com.stacktrace.yo.scrapeline.core.pipeline.PipelineActor
 import com.stacktrace.yo.scrapeline.igdb.pipeline.detail.actor.GameDetailSupervisor
+import com.stacktrace.yo.scrapeline.old.core.IGDBAPIClient
+import com.stacktrace.yo.scrapeline.old.core.Protocol._
+import com.stacktrace.yo.scrapeline.old.core.pipeline.PipelineActor
 import org.stacktrace.yo.igdb.client.IGDBClient
 import org.stacktrace.yo.igdb.model.Game
 

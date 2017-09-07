@@ -5,9 +5,9 @@ import java.io.File
 import akka.actor.{ActorRef, Cancellable, Props}
 import com.fasterxml.jackson.databind.{DeserializationFeature, ObjectMapper, ObjectReader}
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
-import com.stacktrace.yo.scrapeline.core.Protocol.{Report, StartDelegate, Working}
-import com.stacktrace.yo.scrapeline.core.pipeline.Delegator
 import com.stacktrace.yo.scrapeline.igdb.pipeline.extract.actor.GameDataExtractionDelegate.{Process, ProcessObjects, Processed, ReadNextFile}
+import com.stacktrace.yo.scrapeline.old.core.Protocol.{Report, StartDelegate, Working}
+import com.stacktrace.yo.scrapeline.old.core.pipeline.Delegator
 import org.stacktrace.yo.igdb.model.Game
 
 import scala.collection.mutable

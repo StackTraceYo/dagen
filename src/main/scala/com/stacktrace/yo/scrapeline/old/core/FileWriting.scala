@@ -1,4 +1,4 @@
-package com.stacktrace.yo.scrapeline.core
+package com.stacktrace.yo.scrapeline.old.core
 
 import com.fasterxml.jackson.databind.{ObjectMapper, ObjectWriter}
 import com.fasterxml.jackson.module.scala.DefaultScalaModule

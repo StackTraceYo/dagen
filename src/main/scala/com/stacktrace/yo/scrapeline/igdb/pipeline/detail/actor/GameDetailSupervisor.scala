@@ -3,12 +3,12 @@ package com.stacktrace.yo.scrapeline.igdb.pipeline.detail.actor
 import java.util
 
 import akka.actor.{ActorRef, Cancellable, PoisonPill, Props}
-import com.stacktrace.yo.scrapeline.core.Protocol.{PipelineFinished, Report, StartDelegate, Working}
-import com.stacktrace.yo.scrapeline.core.pipeline.Delegator
 import com.stacktrace.yo.scrapeline.igdb.pipeline.detail.actor.GameDetailActor.{GetIds, WriteContent}
 import com.stacktrace.yo.scrapeline.igdb.pipeline.detail.actor.GameDetailSupervisor.WriteNextObjects
 import com.stacktrace.yo.scrapeline.igdb.pipeline.detail.actor.WriteGameDetailActor.{FinishedWrite, WriteGame}
 import com.stacktrace.yo.scrapeline.old.HttpRequestSupervisor.SendNextRequests
+import com.stacktrace.yo.scrapeline.old.core.Protocol.{PipelineFinished, Report, StartDelegate, Working}
+import com.stacktrace.yo.scrapeline.old.core.pipeline.Delegator
 import org.stacktrace.yo.igdb.model.Game
 
 import scala.collection.mutable

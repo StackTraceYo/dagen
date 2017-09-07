@@ -1,4 +1,4 @@
-package com.stacktrace.yo.scrapeline.core
+package com.stacktrace.yo.scrapeline.old.core
 
 import org.stacktrace.yo.igdb.client.IGDBClient
 

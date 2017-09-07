@@ -1,4 +1,4 @@
-package com.stacktrace.yo.scrapeline.core.pipeline
+package com.stacktrace.yo.scrapeline.old.core.pipeline
 
 import akka.actor.{Actor, ActorLogging}
 

@@ -2,8 +2,8 @@ package com.stacktrace.yo.scrapeline.igdb
 
 import akka.actor.{ActorSystem, Props}
 import akka.stream.ActorMaterializer
-import com.stacktrace.yo.scrapeline.core.Protocol.Start
 import com.stacktrace.yo.scrapeline.igdb.engine.IGDBEngine
+import com.stacktrace.yo.scrapeline.old.core.Protocol.Start
 
 import scala.concurrent.ExecutionContextExecutor
 import scala.language.postfixOps

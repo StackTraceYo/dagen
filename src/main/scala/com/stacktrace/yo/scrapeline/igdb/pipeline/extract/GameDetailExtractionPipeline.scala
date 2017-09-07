@@ -1,10 +1,10 @@
 package com.stacktrace.yo.scrapeline.igdb.pipeline.extract
 
 import akka.actor.{ActorRef, Props}
-import com.stacktrace.yo.scrapeline.core.IGDBAPIClient
-import com.stacktrace.yo.scrapeline.core.Protocol._
-import com.stacktrace.yo.scrapeline.core.pipeline.PipelineActor
 import com.stacktrace.yo.scrapeline.igdb.pipeline.extract.actor.GameDataExtractionDelegate
+import com.stacktrace.yo.scrapeline.old.core.IGDBAPIClient
+import com.stacktrace.yo.scrapeline.old.core.Protocol._
+import com.stacktrace.yo.scrapeline.old.core.pipeline.PipelineActor
 import org.stacktrace.yo.igdb.client.IGDBClient
 
 /**

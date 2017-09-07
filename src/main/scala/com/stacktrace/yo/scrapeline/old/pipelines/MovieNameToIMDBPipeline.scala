@@ -1,4 +1,4 @@
-package com.stacktrace.yo.scrapeline.imdb.pipelines
+package com.stacktrace.yo.scrapeline.old.pipelines
 
 import java.net.URLEncoder
 
