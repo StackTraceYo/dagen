@@ -6,10 +6,12 @@ import com.stacktrace.yo.scrapeline.engine.core.EngineProtocol.{Begin, Read, Scr
 import com.stacktrace.yo.scrapeline.engine.scrape.ScrapeProtocol.{ScrapeUrl, ScrapedContentCallBack}
 import com.stacktrace.yo.scrapeline.engine.scrape.{ScrapeEngine, ScrapeSupervisor}
 
+import scala.concurrent.ExecutionContext
+
 /**
   * Created by Stacktraceyo on 9/6/17.
   */
-class ScrapeLineEngine(scrapeline: ScrapelineDefinition) extends Engine with ScrapeEngine {
+class ScrapeLineEngine(scrapeline: ScrapelineDefinition)(implicit ec: ExecutionContext) extends Engine with ScrapeEngine {
 
 
   //  override val fileSourceSupervisor: ActorRef = context.actorOf(Props(new FileSourceSupervisor(this)))

@@ -11,7 +11,7 @@ class ScrapeActor extends Actor with ActorLogging {
   override def receive: Receive = {
     case msg@BeginScrape(url: String) =>
       val oSender = sender
-      log.info("Getting {}", url)
+      log.debug("Getting {}", url)
       val doc: ScrapedContent = scrapeBrowser.get(url)
       sender ! Scraped(url, doc)
   }

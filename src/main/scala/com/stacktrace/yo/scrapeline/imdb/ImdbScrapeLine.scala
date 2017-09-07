@@ -1,10 +1,12 @@
 package com.stacktrace.yo.scrapeline.imdb
 
+import java.net.URLEncoder
+
 import com.stacktrace.yo.scrapeline.engine.ScrapeLine
 import com.stacktrace.yo.scrapeline.engine.core.EngineProtocol.{EngineMessageType, Scrape}
 import com.stacktrace.yo.scrapeline.engine.scrape.ScrapeProtocol.ScrapedContent
 import net.ruippeixotog.scalascraper.dsl.DSL._
-import net.ruippeixotog.scalascraper.scraper.ContentExtractors.elementList
+import net.ruippeixotog.scalascraper.scraper.ContentExtractors.{element, elementList}
 
 /**
   * Created by Stacktraceyo on 9/6/17.
@@ -34,14 +36,25 @@ class ImdbScrapeLine extends ScrapeLine {
           "http://www.the-numbers.com/" + link.attr("href")
         }
       ).foreach(url => {
-        andThenScrape(url, parseEachMovie)
+        requestAndCall(url, searchIMDB)
       })
     })
   }
 
 
-  def parseEachMovie(doc: ScrapedContent): Unit = {
-    println(doc.toString)
+  def searchIMDB(doc: ScrapedContent): Unit = {
+    val imdburl = "http://www.imdb.com/find?ref_=nv_sr_fn&q=" + URLEncoder.encode(doc.title.split("-")(0).trim, "UTF-8") + "&s=tt"
+    requestAndCall(imdburl, printImdbInfo)
+  }
+
+  def printImdbInfo(doc: ScrapedContent): Unit = {
+    val link = doc >> element("#main div div.findSection table tbody tr:nth-child(1) td.result_text  a")
+    val imdbDetail = "http://www.imdb.com" + link.attr("href")
+    requestAndCall(imdbDetail, scrapeMovieDetail)
+  }
+
+  def scrapeMovieDetail(doc: ScrapedContent): Unit = {
+    println(doc.title)
   }
 
 

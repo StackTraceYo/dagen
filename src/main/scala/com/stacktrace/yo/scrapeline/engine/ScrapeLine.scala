@@ -21,7 +21,7 @@ abstract class ScrapeLine extends ScrapelineDefinition {
     scrapelineEngine ! Begin()
   }
 
-  override def andThenScrape(url: String, pipe: ScrapedContentCallBack): Unit = {
+  override def requestAndCall(url: String, pipe: ScrapedContentCallBack): Unit = {
     scrapelineEngine ! ScrapeUrl(url, pipe)
   }
 }

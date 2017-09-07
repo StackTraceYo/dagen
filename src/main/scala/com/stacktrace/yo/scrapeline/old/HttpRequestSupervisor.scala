@@ -3,7 +3,7 @@ package com.stacktrace.yo.scrapeline.old
 import akka.actor.{Actor, ActorLogging, Cancellable, Props}
 import com.stacktrace.yo.scrapeline.engine.scrape.ScrapeActor
 import com.stacktrace.yo.scrapeline.engine.scrape.ScrapeProtocol.BeginScrape
-import com.stacktrace.yo.scrapeline.old.HttpRequestSupervisor.SendNextRequests
+import com.stacktrace.yo.scrapeline.igdb.pipeline.detail.actor.GameDetailSupervisor.SendNextRequests
 
 import scala.concurrent.duration._
 import scala.language.postfixOps
@@ -41,6 +41,5 @@ class HttpRequestSupervisor(val urlSet: Set[String]) extends Actor with ActorLog
 
 object HttpRequestSupervisor {
 
-  case class SendNextRequests()
 
 }

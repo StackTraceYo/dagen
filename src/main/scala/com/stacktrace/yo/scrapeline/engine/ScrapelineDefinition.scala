@@ -8,15 +8,14 @@ import com.stacktrace.yo.scrapeline.engine.scrape.ScrapeProtocol.{ScrapedContent
   */
 trait ScrapelineDefinition {
 
-  def workerCount = 5
-
   def begin(): Unit
 
   def start: List[EngineMessageType]
 
   def beginScrape(doc: ScrapedContent): Unit
 
-  def andThenScrape(url: String, pipe: ScrapedContentCallBack): Unit
+  def requestAndCall(url: String, pipe: ScrapedContentCallBack): Unit
+
 
 
 }

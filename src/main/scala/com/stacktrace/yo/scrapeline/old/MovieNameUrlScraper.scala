@@ -11,7 +11,7 @@ class MovieNameUrlScraper extends Actor with ActorLogging {
 
   override def receive: Receive = {
 
-    case msg@Scraped(document: Document) =>
+    case msg@Scraped("old", document: Document) =>
       val oSender = sender
       val table = document >> elementList("table tr")
       val movieLinkTuples = table.flatMap(tr => {
