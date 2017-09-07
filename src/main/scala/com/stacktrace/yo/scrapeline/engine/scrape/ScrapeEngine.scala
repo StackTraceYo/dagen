@@ -10,6 +10,6 @@ trait ScrapeEngine {
 
   this: Actor =>
 
-  val scrapeSupervisor: ActorRef
+  var scrapeSupervisor: ActorRef
 
 }

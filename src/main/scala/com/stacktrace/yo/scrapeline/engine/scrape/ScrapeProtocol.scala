@@ -11,7 +11,7 @@ object ScrapeProtocol {
 
   type ScrapedContentCallBack = ScrapedContent => Unit
 
-  case class ScrapeUrl(url: String, callback: ScrapedContentCallBack)
+  case class ScrapeUrlAndCall(url: String, callback: ScrapedContentCallBack)
 
   case class BeginScrape(url: String)
 

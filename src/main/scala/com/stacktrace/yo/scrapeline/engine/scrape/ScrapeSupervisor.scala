@@ -27,7 +27,7 @@ class ScrapeSupervisor(engine: Engine)(implicit ec: ExecutionContext) extends Ac
 
   override def receive: PartialFunction[Any, Unit] = {
 
-    case msg@ScrapeUrl(url, callback) =>
+    case msg@ScrapeUrlAndCall(url, callback) =>
       toProcess.enqueue((url, callback))
     case SendNextRequests() =>
       for (i <- 1 to Math.min(toProcess.size, 100 - callbacks.size)) {

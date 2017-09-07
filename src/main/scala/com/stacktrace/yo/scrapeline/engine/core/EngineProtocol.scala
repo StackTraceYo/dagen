@@ -7,8 +7,9 @@ object EngineProtocol {
 
   sealed trait EngineMessageType
 
-  case class Scrape(url : String) extends EngineMessageType
-  case class Read(url : String) extends EngineMessageType
+  case class Scrape(url: String) extends EngineMessageType
+
+  case class Read(url: String) extends EngineMessageType
 
   case class Begin()
 
