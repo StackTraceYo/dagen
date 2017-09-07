@@ -10,7 +10,7 @@ import scala.concurrent.ExecutionContextExecutor
 /**
   * Created by Stacktraceyo on 9/6/17.
   */
-abstract class BaseScrapeLine extends ScrapelineDefinition {
+abstract class ScrapeLine extends ScrapelineDefinition {
 
   implicit val as: ActorSystem = ActorSystem("Scrapeline")
   implicit val ec: ExecutionContextExecutor = as.dispatcher

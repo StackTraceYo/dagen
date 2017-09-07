@@ -1,6 +1,6 @@
 package com.stacktrace.yo.scrapeline.imdb
 
-import com.stacktrace.yo.scrapeline.engine.BaseScrapeLine
+import com.stacktrace.yo.scrapeline.engine.ScrapeLine
 import com.stacktrace.yo.scrapeline.engine.core.EngineProtocol.{EngineMessageType, Scrape}
 import com.stacktrace.yo.scrapeline.engine.scrape.ScrapeProtocol.ScrapedContent
 import net.ruippeixotog.scalascraper.dsl.DSL._
@@ -10,7 +10,7 @@ import net.ruippeixotog.scalascraper.scraper.ContentExtractors.elementList
   * Created by Stacktraceyo on 9/6/17.
   */
 
-class ImdbScrapeLine extends BaseScrapeLine {
+class ImdbScrapeLine extends ScrapeLine {
 
   override def start: List[EngineMessageType] = {
 
