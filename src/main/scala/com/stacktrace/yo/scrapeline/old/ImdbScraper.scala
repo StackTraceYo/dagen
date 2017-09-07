@@ -3,7 +3,8 @@ package com.stacktrace.yo.scrapeline.old
 import akka.actor.{ActorSystem, Props}
 import akka.pattern.ask
 import akka.util.Timeout
-import com.stacktrace.yo.scrapeline.old.ScrapeActor.{BeginScrape, ScrapeContent}
+import com.stacktrace.yo.scrapeline.engine.scrape.ScrapeActor
+import com.stacktrace.yo.scrapeline.engine.scrape.ScrapeProtocol.{BeginScrape, ScrapedContent}
 import com.stacktrace.yo.scrapeline.imdb.Domain.MovieNameAndDetailUrl
 
 import scala.concurrent.duration._
@@ -31,7 +32,7 @@ object ImdbScraper extends App {
     val reader = system.actorOf(Props(new ScrapeActor()))
     //get the list movie names and detail urls
     val movieNameAndUrlList = ask(reader, BeginScrape("http://www.the-numbers.com/movie/budgets/all"))
-      .mapTo[ScrapeContent]
+      .mapTo[ScrapedContent]
       .flatMap(content => {
         val phase1 = system.actorOf(Props(new MovieNameUrlScraper()))
         val movieNameAndDetailUrlList = ask(phase1, content)

@@ -1,9 +1,9 @@
 package com.stacktrace.yo.scrapeline.old
 
 import akka.actor.{Actor, ActorLogging, Cancellable, Props}
+import com.stacktrace.yo.scrapeline.engine.scrape.ScrapeActor
+import com.stacktrace.yo.scrapeline.engine.scrape.ScrapeProtocol.BeginScrape
 import com.stacktrace.yo.scrapeline.old.HttpRequestSupervisor.SendNextRequests
-import com.stacktrace.yo.scrapeline.old.ScrapeActor.{BeginScrape, ScrapeContent}
-import net.ruippeixotog.scalascraper.model.Document
 
 import scala.concurrent.duration._
 import scala.language.postfixOps
@@ -30,12 +30,12 @@ class HttpRequestSupervisor(val urlSet: Set[String]) extends Actor with ActorLog
           inProcess += 1
         }
       }
-    case ScrapeContent(document: Document) => {
-      inProcess -= 1
-      numVisited += 1
-      log.info("Recieved Response {} left in queue, {} in process", toProcess.size, inProcess)
-
-    }
+    //    case ScrapeContent(document: Document) => {
+    //      inProcess -= 1
+    //      numVisited += 1
+    //      log.info("Recieved Response {} left in queue, {} in process", toProcess.size, inProcess)
+    //
+    //    }
   }
 }
 
