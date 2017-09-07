@@ -1,6 +1,7 @@
 package com.stacktrace.yo.scrapeline.engine
 
 import com.stacktrace.yo.scrapeline.engine.core.EngineProtocol.EngineMessageType
+import com.stacktrace.yo.scrapeline.engine.json.JSONProtocol.JSONContentCallBack
 import com.stacktrace.yo.scrapeline.engine.scrape.ScrapeProtocol.{ScrapedContent, ScrapedContentCallBack}
 
 /**
@@ -15,6 +16,8 @@ trait ScrapelineDefinition {
   def beginScrape(doc: ScrapedContent): Unit
 
   def requestAndCall(url: String, pipe: ScrapedContentCallBack): Unit
+
+  def requestApiAndCall(url: String, pipe: JSONContentCallBack): Unit
 
 
 

@@ -13,6 +13,7 @@ libraryDependencies ++= {
   Seq(
     "com.typesafe.akka" % "akka-actor_2.11" % akkaVersion,
     "com.typesafe.akka" % "akka-stream_2.11" % akkaVersion,
+    "com.typesafe.akka" % "akka-http_2.11" % "10.0.10",
     "org.jsoup" % "jsoup" % "1.10.3",
     "net.ruippeixotog" %% "scala-scraper" % "2.0.0",
     "com.nrinaudo" %% "kantan.xpath" % "0.2.0",

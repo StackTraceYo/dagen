@@ -3,6 +3,7 @@ package com.stacktrace.yo.scrapeline.engine
 import akka.actor.{ActorSystem, Props}
 import com.stacktrace.yo.scrapeline.engine.core.EngineProtocol.Begin
 import com.stacktrace.yo.scrapeline.engine.core.ScrapeLineEngine
+import com.stacktrace.yo.scrapeline.engine.json.JSONProtocol.JSONContentCallBack
 import com.stacktrace.yo.scrapeline.engine.scrape.ScrapeProtocol.{ScrapeUrlAndCall, ScrapedContentCallBack}
 
 import scala.concurrent.ExecutionContextExecutor
@@ -24,4 +25,9 @@ abstract class ScrapeLine extends ScrapelineDefinition {
   override def requestAndCall(url: String, pipe: ScrapedContentCallBack): Unit = {
     scrapelineEngine ! ScrapeUrlAndCall(url, pipe)
   }
+
+  override def requestApiAndCall(url: String, pipe: JSONContentCallBack): Unit = {
+
+  }
+
 }
