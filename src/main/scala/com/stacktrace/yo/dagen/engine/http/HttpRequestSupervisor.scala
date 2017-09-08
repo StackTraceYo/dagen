@@ -21,14 +21,13 @@ import scala.language.postfixOps
 class HttpRequestSupervisor()(implicit ec: ExecutionContext, am: Materializer) extends Actor with ActorLogging {
 
   val requesters: ActorRef = context.actorOf(RoundRobinPool(5).props(Props(new HttpRequestActor())))
-  //  val handlers: ActorRef = context.actorOf(RoundRobinPool(5).props(Props(new HttpRequestActor())))
 
   val requestCallbacks: TrieMap[HttpRequest, JSONContentCallBack] = TrieMap[HttpRequest, JSONContentCallBack]()
+  val responseCache: TrieMap[HttpRequest, HttpResponse] = TrieMap[HttpRequest, HttpResponse]()
 
   val pendingRequest: mutable.Queue[(HttpRequest, JSONContentCallBack)] = scala.collection.mutable.Queue[(HttpRequest, JSONContentCallBack)]()
-  //  val pendingHandle: mutable.Queue[(String, JSONContentCallBack)] = scala.collection.mutable.Queue[(String, JSONContentCallBack)]()
 
-  val tick: Cancellable = context.system.scheduler.schedule(0 millis, 5000 millis, self, SendNextRequests())
+  val tick: Cancellable = context.system.scheduler.schedule(0 millis, 1000 millis, self, SendNextRequests())
 
 
   override def receive: PartialFunction[Any, Unit] = {
@@ -43,14 +42,20 @@ class HttpRequestSupervisor()(implicit ec: ExecutionContext, am: Materializer) e
         self ! ProcessHttpRequest(process._1, process._2)
       }
     case msg@ProcessHttpRequest(httpRequest: HttpRequest, callback: JSONContentCallBack) =>
-      requestCallbacks.put(httpRequest, callback)
-      requesters ! Request(httpRequest)
+      responseCache.get(httpRequest) match {
+        case Some(doc) =>
+
+        case None =>
+          requestCallbacks.put(httpRequest, callback)
+          requesters ! Request(httpRequest)
+      }
     case msg@ResponseFromRequest(request: HttpRequest, doc: HttpResponse) =>
       println(requestCallbacks.get(request).isDefined)
       doc match {
         case HttpResponse(StatusCodes.OK, headers, entity, _) =>
           entity.dataBytes.runFold(ByteString(""))(_ ++ _).foreach { body =>
             log.info("Got response, body: " + body.utf8String)
+            responseCache.put(request, doc)
           }
         case resp@HttpResponse(code, _, _, _) =>
           log.info("Request failed, response code: " + code)
