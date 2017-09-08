@@ -1,15 +1,15 @@
-package com.stacktrace.yo.scrapeline.engine.scrape
+package com.stacktrace.yo.scrapeline.engine.http
 
 import akka.actor.{Actor, ActorRef}
 
 /**
   * Created by Stacktraceyo on 9/6/17.
   */
-trait Scraper {
+trait HttpRequester {
 
 
   this: Actor =>
 
-  val scrapeSupervisor: ActorRef
+  val requestSupervisor: ActorRef
 
 }

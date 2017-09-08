@@ -23,7 +23,7 @@ object ImdbScraper extends App {
   def test = {
     val phase1 =
       system.actorOf(Props(
-        new HttpRequestSupervisor(
+        new HttpRequestSupervisorOld(
           Set("http://www.the-numbers.com/movie/budgets/all"))
       ))
   }
@@ -48,7 +48,7 @@ object ImdbScraper extends App {
             obj.url
           })
         val urlSet = listOfUrl.toSet
-        system.actorOf(Props(new HttpRequestSupervisor(urlSet)))
+        system.actorOf(Props(new HttpRequestSupervisorOld(urlSet)))
       }
     )
   }

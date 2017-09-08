@@ -2,7 +2,6 @@ package com.stacktrace.yo.scrapeline.engine.scrape
 
 import akka.actor.{Actor, ActorLogging, ActorRef, Cancellable, Props}
 import akka.routing.RoundRobinPool
-import com.stacktrace.yo.scrapeline.engine.core.engine.Engine
 import com.stacktrace.yo.scrapeline.engine.core.protocol.SupervisorProtocol.SendNextRequests
 import com.stacktrace.yo.scrapeline.engine.scrape.ScrapeProtocol._
 import com.stacktrace.yo.scrapeline.engine.scrape.ScrapeSupervisor.ProcessScrape
@@ -16,7 +15,7 @@ import scala.language.postfixOps
 /**
   * Created by Stacktraceyo on 9/6/17.
   */
-class ScrapeSupervisor(engine: Engine)(implicit ec: ExecutionContext) extends Actor with ActorLogging {
+class ScrapeSupervisor()(implicit ec: ExecutionContext) extends Actor with ActorLogging {
 
   val scrapers: ActorRef = context.actorOf(RoundRobinPool(5).props(Props(new ScrapeActor)))
 

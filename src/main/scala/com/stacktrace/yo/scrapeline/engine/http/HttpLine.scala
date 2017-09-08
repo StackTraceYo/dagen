@@ -4,17 +4,12 @@ import akka.actor.{ActorSystem, Props}
 import com.stacktrace.yo.scrapeline.engine.core.definitions.HttpDefinition
 import com.stacktrace.yo.scrapeline.engine.core.engine.Engine
 import com.stacktrace.yo.scrapeline.engine.core.protocol.EngineProtocol.Begin
-import com.stacktrace.yo.scrapeline.engine.http.HttpRequestProtocol.JSONContentCallBack
-
-import scala.concurrent.ExecutionContextExecutor
+import com.stacktrace.yo.scrapeline.engine.http.HttpRequestProtocol.{JSONContentCallBack, RequestUrlAndCall}
 
 /**
   * Created by Stacktraceyo on 9/6/17.
   */
-abstract class HttpLine extends HttpDefinition {
-
-  implicit val as: ActorSystem
-  implicit val ec: ExecutionContextExecutor
+abstract class HttpLine(implicit as: ActorSystem) extends HttpDefinition {
 
   private val httpLineEngine = as.actorOf(Props(new Engine(this)))
 
@@ -23,7 +18,7 @@ abstract class HttpLine extends HttpDefinition {
   }
 
   override def requestApiAndCall(url: String, pipe: JSONContentCallBack): Unit = {
-
+    httpLineEngine ! RequestUrlAndCall(url, pipe)
   }
 
 }

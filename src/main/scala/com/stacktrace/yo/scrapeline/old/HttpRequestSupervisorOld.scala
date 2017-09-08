@@ -8,7 +8,7 @@ import com.stacktrace.yo.scrapeline.igdb.pipeline.detail.actor.GameDetailSupervi
 import scala.concurrent.duration._
 import scala.language.postfixOps
 
-class HttpRequestSupervisor(val urlSet: Set[String]) extends Actor with ActorLogging {
+class HttpRequestSupervisorOld(val urlSet: Set[String]) extends Actor with ActorLogging {
 
   import context.dispatcher
 
@@ -39,7 +39,7 @@ class HttpRequestSupervisor(val urlSet: Set[String]) extends Actor with ActorLog
   }
 }
 
-object HttpRequestSupervisor {
+object HttpRequestSupervisorOld {
 
 
 }

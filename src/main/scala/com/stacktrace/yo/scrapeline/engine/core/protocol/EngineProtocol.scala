@@ -11,6 +11,8 @@ object EngineProtocol {
 
   case class Read(url: String) extends EngineMessageType
 
+  case class Request(url: String) extends EngineMessageType
+
   case class Begin()
 
 }

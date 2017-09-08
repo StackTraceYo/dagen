@@ -5,7 +5,6 @@ import akka.http.scaladsl.model.{HttpResponse, StatusCodes}
 import akka.routing.RoundRobinPool
 import akka.stream.Materializer
 import akka.util.ByteString
-import com.stacktrace.yo.scrapeline.engine.core.engine.Engine
 import com.stacktrace.yo.scrapeline.engine.core.protocol.SupervisorProtocol.SendNextRequests
 import com.stacktrace.yo.scrapeline.engine.http.HttpRequestProtocol.{JSONContentCallBack, RequestUrl, RequestUrlAndCall, Requested}
 import com.stacktrace.yo.scrapeline.engine.http.HttpRequestSupervisor.ProcessHttpRequest
@@ -19,7 +18,7 @@ import scala.language.postfixOps
 /**
   * Created by Stacktraceyo on 9/6/17.
   */
-class HttpRequestSupervisor(engine: Engine)(implicit ec: ExecutionContext, am: Materializer) extends Actor with ActorLogging {
+class HttpRequestSupervisor()(implicit ec: ExecutionContext, am: Materializer) extends Actor with ActorLogging {
 
   val requesters: ActorRef = context.actorOf(RoundRobinPool(5).props(Props(new HttpRequestActor())))
   //  val handlers: ActorRef = context.actorOf(RoundRobinPool(5).props(Props(new HttpRequestActor())))
