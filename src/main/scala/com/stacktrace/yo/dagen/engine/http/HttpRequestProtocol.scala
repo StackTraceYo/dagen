@@ -1,6 +1,6 @@
 package com.stacktrace.yo.dagen.engine.http
 
-import akka.http.scaladsl.model.HttpResponse
+import akka.http.scaladsl.model.{HttpRequest, HttpResponse}
 
 /**
   * Created by Stacktraceyo on 9/6/17.
@@ -13,8 +13,10 @@ object HttpRequestProtocol {
 
   case class RequestUrlAndCall(url: String, callback: JSONContentCallBack)
 
-  case class RequestUrl(url: String)
+  case class RequestAndCall(request: HttpRequest, callback: JSONContentCallBack)
 
-  case class Requested(url: String, doc: HttpResponse)
+  case class Request(request: HttpRequest)
+
+  case class ResponseFromRequest(request: HttpRequest, doc: HttpResponse)
 
 }

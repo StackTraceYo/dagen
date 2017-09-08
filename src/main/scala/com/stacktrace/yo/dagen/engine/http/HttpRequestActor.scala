@@ -4,7 +4,7 @@ import akka.actor.{Actor, ActorLogging}
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.model.HttpRequest
 import akka.stream.{ActorMaterializer, ActorMaterializerSettings}
-import com.stacktrace.yo.dagen.engine.http.HttpRequestProtocol.{RequestUrl, Requested}
+import com.stacktrace.yo.dagen.engine.http.HttpRequestProtocol.{Request, ResponseFromRequest}
 
 import scala.concurrent.ExecutionContext
 
@@ -17,12 +17,12 @@ class HttpRequestActor(implicit ec: ExecutionContext) extends Actor with ActorLo
 
 
   override def receive: Receive = {
-    case msg@RequestUrl(url: String) =>
+    case msg@Request(request: HttpRequest) =>
       val oSender = sender
-      val callUrl = url
-      http.singleRequest(HttpRequest(uri = callUrl))
+      http.singleRequest(request)
         .map(response => {
-          Requested(url, response)
+          println(response.status)
+          ResponseFromRequest(request, response)
         })
         .pipeTo(oSender)
   }
