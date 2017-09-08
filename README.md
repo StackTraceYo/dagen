@@ -1,8 +1,7 @@
-# scrapeline
+# Data Gathering Engine (dagen )
+Data collection engine I am building to collect/gather data from web pages, apis, or other data sources. 
 
-Data collection engine I built for a meta entertainment prediction engine
-
-- The base "engine" for collecting the data is based off of [Scrapy](https://scrapy.org/)
+- The base "engine" for collecting the data is based off of workflow of when using [Scrapy](https://scrapy.org/)
     * It is built with [Akka](http://akka.io/) in scala
 
 - IMDB portion inspired after reading [Predict Movie Rating](https://blog.nycdatascience.com/student-works/machine-learning/movie-rating-prediction)
@@ -10,11 +9,15 @@ Data collection engine I built for a meta entertainment prediction engine
 - To collect video game, I am using my library [java-igdb](https://github.com/stacktraceyo/java-igdb) to call the [igdb-api](https://www.igdb.com/api) 
  
  
-
 ## imdb scraper
 
-1. TODO         
+1. Currently protyping new engine implementation with imdb
+   * see imdb folder
 ## igdb collector
+
+####  * uses old prototype engine *
+ 
+ this currently builds an actor system and passes messages up and downstream like so:
 
 1. IgdbScraper
     * This is the intro point into the application it calls the flows in order

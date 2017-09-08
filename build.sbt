@@ -1,4 +1,4 @@
-name := "scrapeline"
+name := "dagen"
 
 version := "1.0"
 
