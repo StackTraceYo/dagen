@@ -1,4 +1,4 @@
-package com.stacktrace.yo.scrapeline.engine.core
+package com.stacktrace.yo.scrapeline.engine.core.protocol
 
 /**
   * Created by Stacktraceyo on 9/6/17.

@@ -2,13 +2,19 @@ package com.stacktrace.yo.scrapeline.igdb
 
 import java.net.URLEncoder
 
+import akka.actor.ActorSystem
+import com.stacktrace.yo.scrapeline.engine.core.protocol.EngineProtocol.{EngineMessageType, Scrape}
+import com.stacktrace.yo.scrapeline.engine.scrape.ScrapeLine
+import com.stacktrace.yo.scrapeline.engine.scrape.ScrapeProtocol.ScrapedContent
 import net.ruippeixotog.scalascraper.dsl.DSL._
 import net.ruippeixotog.scalascraper.scraper.ContentExtractors.{element, elementList}
-import com.stacktrace.yo.scrapeline.engine.ScrapeLine
-import com.stacktrace.yo.scrapeline.engine.core.EngineProtocol.{EngineMessageType, Scrape}
-import com.stacktrace.yo.scrapeline.engine.scrape.ScrapeProtocol.ScrapedContent
 
-class IGDBScrapeLine extends ScrapeLine {
+import scala.concurrent.ExecutionContext
+
+class IGDBScrapeLine(implicit as: ActorSystem) extends ScrapeLine {
+
+  implicit val ec: ExecutionContext = as.dispatcher
+  //  implicit val mat: ActorMaterializer = ActorMaterializer()
 
   override def start: List[EngineMessageType] = {
 
@@ -36,7 +42,6 @@ class IGDBScrapeLine extends ScrapeLine {
       })
     })
   }
-
 
 
   def searchIMDB(doc: ScrapedContent): Unit = {

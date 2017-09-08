@@ -1,10 +1,10 @@
-package com.stacktrace.yo.scrapeline.engine.json
+package com.stacktrace.yo.scrapeline.engine.http
 
 import akka.actor.{Actor, ActorLogging}
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.model.HttpRequest
 import akka.stream.{ActorMaterializer, ActorMaterializerSettings}
-import com.stacktrace.yo.scrapeline.engine.json.JSONProtocol.{RequestUrl, Requested}
+import com.stacktrace.yo.scrapeline.engine.http.HttpRequestProtocol.{RequestUrl, Requested}
 
 import scala.concurrent.ExecutionContext
 

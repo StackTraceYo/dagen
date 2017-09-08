@@ -2,14 +2,16 @@ package com.stacktrace.yo.scrapeline.engine.scrape
 
 import akka.actor.{Actor, ActorLogging, ActorRef, Cancellable, Props}
 import akka.routing.RoundRobinPool
-import com.stacktrace.yo.scrapeline.engine.core.Engine
+import com.stacktrace.yo.scrapeline.engine.core.engine.Engine
+import com.stacktrace.yo.scrapeline.engine.core.protocol.SupervisorProtocol.SendNextRequests
 import com.stacktrace.yo.scrapeline.engine.scrape.ScrapeProtocol._
-import com.stacktrace.yo.scrapeline.engine.scrape.ScrapeSupervisor.{ProcessScrape, SendNextRequests}
+import com.stacktrace.yo.scrapeline.engine.scrape.ScrapeSupervisor.ProcessScrape
 
 import scala.collection.concurrent.TrieMap
 import scala.collection.mutable
 import scala.concurrent.ExecutionContext
 import scala.concurrent.duration._
+import scala.language.postfixOps
 
 /**
   * Created by Stacktraceyo on 9/6/17.
@@ -28,6 +30,7 @@ class ScrapeSupervisor(engine: Engine)(implicit ec: ExecutionContext) extends Ac
   override def receive: PartialFunction[Any, Unit] = {
 
     case msg@ScrapeUrlAndCall(url, callback) =>
+      log.info("Enqueue Url: {}", url)
       toProcess.enqueue((url, callback))
     case SendNextRequests() =>
       for (i <- 1 to Math.min(toProcess.size, 100 - callbacks.size)) {
@@ -38,6 +41,7 @@ class ScrapeSupervisor(engine: Engine)(implicit ec: ExecutionContext) extends Ac
       callbacks.put(url, callback)
       scrapers ! BeginScrape(url)
     case msg@Scraped(url: String, doc: ScrapedContent) =>
+      log.info("Scraped: {}", url)
       callbacks.get(url) match {
         case Some(callback) =>
           callback(doc)
@@ -50,7 +54,6 @@ class ScrapeSupervisor(engine: Engine)(implicit ec: ExecutionContext) extends Ac
 
 object ScrapeSupervisor {
 
-  case class SendNextRequests()
 
   case class ProcessScrape(url: String, callBack: ScrapedContentCallBack)
 

@@ -2,8 +2,9 @@ package com.stacktrace.yo.scrapeline.imdb
 
 import java.net.URLEncoder
 
-import com.stacktrace.yo.scrapeline.engine.ScrapeLine
-import com.stacktrace.yo.scrapeline.engine.core.EngineProtocol.{EngineMessageType, Scrape}
+import akka.actor.ActorSystem
+import com.stacktrace.yo.scrapeline.engine.core.protocol.EngineProtocol.{EngineMessageType, Scrape}
+import com.stacktrace.yo.scrapeline.engine.scrape.ScrapeLine
 import com.stacktrace.yo.scrapeline.engine.scrape.ScrapeProtocol.ScrapedContent
 import net.ruippeixotog.scalascraper.dsl.DSL._
 import net.ruippeixotog.scalascraper.scraper.ContentExtractors.{element, elementList}
@@ -12,7 +13,7 @@ import net.ruippeixotog.scalascraper.scraper.ContentExtractors.{element, element
   * Created by Stacktraceyo on 9/6/17.
   */
 
-class ImdbScrapeLine extends ScrapeLine {
+class ImdbScrapeLine(implicit as: ActorSystem) extends ScrapeLine {
 
   override def start: List[EngineMessageType] = {
 
@@ -61,6 +62,8 @@ class ImdbScrapeLine extends ScrapeLine {
 }
 
 object ImdbScrapeLine extends App {
+
+  implicit val as = ActorSystem("imdb")
 
   val imdbScrapeLine = new ImdbScrapeLine()
   imdbScrapeLine.begin()

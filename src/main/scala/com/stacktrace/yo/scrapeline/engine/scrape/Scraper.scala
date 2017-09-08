@@ -5,7 +5,7 @@ import akka.actor.{Actor, ActorRef}
 /**
   * Created by Stacktraceyo on 9/6/17.
   */
-trait ScrapeEngine {
+trait Scraper {
 
 
   this: Actor =>
